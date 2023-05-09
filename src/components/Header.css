@@ -1,0 +1,32 @@
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100px;
+    background-color: var(--colorSecundario);
+    color: var(--colorPrincipal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    }
+
+header nav{
+    display: flex;
+    flex-direction: column;
+}
+
+header nav h1{
+    text-align: center;
+    font-weight: 400;
+    font-size: var(--fontSizeGrande);
+    text-transform: uppercase;
+}
+
+header nav h2{
+    text-align: center;
+    font-weight: 100;
+    font-size: var(--fontSizeChica);
+    text-transform: uppercase;
+}

@@ -1,0 +1,23 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+:root{
+  --colorPrincipal: #fff;
+  --colorSecundario: #000;
+  --fontPrincipal: 'League Spartan', sans-serif;
+  --fontSizeGrande: 30px;
+  --fontSizeNormal: 26px;
+  --fontSizeChica: 16px;
+
+}
+
+body{
+  font-family: var(--fontPrincipal);
+  background-color: var(--colorPrincipal);
+  overflow-x: hidden;
+}
