@@ -3,7 +3,9 @@ import './Footer.css'
 
 const Footer = () => {
     return(
-        <footer></footer>
+        <footer>
+            <p>Desarrollado por Antonino Sartori</p>
+        </footer>
     )
 }
 

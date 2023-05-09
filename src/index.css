@@ -9,6 +9,7 @@
 :root{
   --colorPrincipal: #fff;
   --colorSecundario: #000;
+  --colorIntermedio: #c5c5c5;
   --fontPrincipal: 'League Spartan', sans-serif;
   --fontSizeGrande: 30px;
   --fontSizeNormal: 26px;
@@ -20,4 +21,5 @@ body{
   font-family: var(--fontPrincipal);
   background-color: var(--colorPrincipal);
   overflow-x: hidden;
+  user-select: none;
 }

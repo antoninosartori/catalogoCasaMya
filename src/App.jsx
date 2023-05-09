@@ -5,6 +5,7 @@ import './App.css'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import LoadingSpinner from './components/LoadingSpinner'
+import Card from './components/Card'
 
 // constantes
 const URL_API = 'https://sheet.best/api/sheets/4c6e4bf6-c0ef-4341-a895-90f7a0ca8e28/tabs/Catalogo'
@@ -92,20 +93,7 @@ function App() {
             }
             {filteredFragances &&
               filteredFragances.map(fragance => (
-                <article className='card-container' key={fragance.id}>
-                  <div className='card-photo'>
-                    <img className='card-image' src={fragance.foto} alt="" />
-                    <span className='card-capacity'>{`${fragance.capacidad}ml`}</span>
-                  </div>
-                  <div className='card-body'>
-                    <h4 className='card-productBrand'>{fragance.marca}</h4>
-                    <h4 className='card-productName'>{fragance.nombre}</h4>
-                  </div>
-                  <div className='card-footer'>
-                    <h5 className='card-price'>{`$${fragance.precio}`}</h5>
-                  </div>
-
-                </article>
+                < Card key={fragance.id} id={fragance.id} marca={fragance.marca} nombre={fragance.nombre} foto={fragance.foto} capacidad={fragance.capacidad} precio={fragance.precio} encargado={fragance.encargado} />
               ))
             }
             
