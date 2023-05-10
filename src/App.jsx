@@ -78,15 +78,15 @@ function App() {
             <input onChange={onChangeSearch} type="text" placeholder='buscar fragancia' value={search}/>
             <span onClick={resetSearch} className='resetSearch'>X</span>
             <div className='filters-container'>
+              <button onClick={handleAllFragance} className='filter-button'>todas</button>
               <button onClick={handleMaleFragance} className='filter-button'>fragancias masculinas</button>
               <button onClick={handleFamaleFragance} className='filter-button'>fragancias femeninas</button>
-              <button onClick={handleAllFragance} className='filter-button'>todas</button>
             </div>
           </form>
         </section>
 
         <section className='content-container'>
-          <h3>Catalogo</h3>
+          <h3>Catálogo</h3>
           <div className='content-group'>
             {isLoading &&
               < LoadingSpinner />

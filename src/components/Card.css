@@ -1,12 +1,18 @@
 .card-container{
     position: relative;
     width: 300px;
-    box-shadow: 1px 1px 5px 1px #0000007e;
-    border-radius: 15px;
+    margin-bottom: 40px;
     display: flex;
     flex-direction: column;
     gap: 10px;
+    box-shadow: 1px 1px 5px 1px #0000007e;
+    border-radius: 15px;
     transition: .1s;
+
+    border-radius: 50px;
+    background: #ffffff;
+    box-shadow:  30px 30px 60px #d9d9d9,
+             -30px -30px 60px #ffffff;
 }
 
 .card-container:hover{
@@ -30,13 +36,16 @@
 
 .card-capacity{
     position: absolute;
-    top: 10px;
-    right: 10px;
-    color: var(--colorPrincipal);
-    background-color: var(--colorSecundario);
+    top: 20px;
+    right: 20px;
+    color: var(--colorSecundario);
+    border: 1px solid var(--colorSecundario);
     padding: 10px 5px;
-    border-radius: 10px;
+    border-radius: 20px;
+    opacity: .7;
+    
 }
+
 
 .card-body{
     display: flex;
@@ -72,17 +81,25 @@
     font-size: var(--fontSizeNormal);
     padding: 5px;
     z-index: 10;
-    background-color: var(--colorSecundario);
-    color: var(--colorPrincipal);
+    color: var(--colorSecundario);
     transform: rotate(45deg) translateX(50%);
     left: 10px;
     top: 30px;
+    border: 1px solid var(--colorSecundario);
     border-radius: 10px;
     opacity: .8;
     transition: .1s;
 }
 
-.card-container:hover .card-incoming{
+.card-container:hover .card-incoming, .card-container:hover .card-capacity{
+    background-color: var(--colorSecundario);
+    color: var(--colorPrincipal);
     opacity: 1;
     transition: .1s;
+}
+
+@media screen and (max-width: 320px){
+    .card-container{
+        width: 95%;
+    }
 }

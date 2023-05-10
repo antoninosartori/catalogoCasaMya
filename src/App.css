@@ -34,7 +34,15 @@ main section{
 .resetSearch{
     position: absolute;
     right: 20px;
-    top: 10px;
+    top: 8px;
+    cursor: pointer;
+    transition: .1s;
+    padding: 4px 2px;
+}
+
+.resetSearch:hover{
+    opacity: .8;
+    transition: .1s;
 }
 
 .filters-container{
@@ -68,15 +76,22 @@ main section{
 }
 
 .content-container h3{
-    padding-bottom: 20px;
+    padding-bottom: 50px;
 }
 
 .content-group{
     max-width: 992px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     gap: 20px;
+}
+
+@media screen and (max-width: 980px){
+    .content-group{
+        justify-content: center;
+        gap: 20px;
+    }
 }
 
