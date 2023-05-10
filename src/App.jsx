@@ -8,6 +8,7 @@ import LoadingSpinner from './components/LoadingSpinner'
 import Card from './components/Card'
 import GoUpArrow from './components/GoUpArrow'
 import CardPlaceholder from './components/CardPlaceholder'
+import CardItemPlaceholder from './components/CardItemPlaceholder'
 
 // constantes
 const URL_API = 'https://sheet.best/api/sheets/4c6e4bf6-c0ef-4341-a895-90f7a0ca8e28/tabs/Catalogo'
@@ -67,7 +68,6 @@ function App() {
       .then((data) => {
         setFilteredFragances(data);
         setFragances(data);
-        
         setIsLoading(false)
       })
       .catch((error) => {
@@ -101,7 +101,15 @@ function App() {
             {isLoading &&
               <div className='loading-container'>
                 < LoadingSpinner />
-                < CardPlaceholder />
+                {/* < CardPlaceholder /> */}
+                <div className='loading-cardsGroup'>
+                  < CardItemPlaceholder />
+                  < CardItemPlaceholder />
+                  < CardItemPlaceholder />
+                  < CardItemPlaceholder />
+                  < CardItemPlaceholder />
+                  < CardItemPlaceholder />
+                </div>
               </div>
             }
             {filteredFragances &&

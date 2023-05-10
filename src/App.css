@@ -101,10 +101,25 @@ main section{
     justify-content: center;
 }
 
+.loading-container svg{
+    width: 300px;
+}
+
+.loading-cardsGroup{
+    max-width: 992px;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+}
+
+
 @media screen and (max-width: 980px){
     .content-group{
         justify-content: center;
         gap: 20px;
+    }
+    .loading-cardsGroup{
+        justify-content: center;
     }
 }
 
