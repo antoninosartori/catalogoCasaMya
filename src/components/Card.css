@@ -67,6 +67,7 @@
     font-weight: 100;
 }
 .card-footer{
+    position: relative;
     padding: 10px 0;
     display: flex;
     justify-content: center;
@@ -76,6 +77,21 @@
 .card-price{
     font-size: var(--fontSizeNormal);
     font-weight: 400;
+}
+
+.whatsapp-link{
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.whatsapp-image{
+    width: 30px;
+    height: auto;
+    object-fit: cover;
 }
 
 .card-incoming{

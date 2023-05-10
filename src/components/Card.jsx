@@ -1,12 +1,25 @@
 import React, { useState } from 'react'
 import './Card.css'
 import ImagePlaceholder from './ImagePlaceholder'
+
+import whatsapp from '../assets/whatsapp.svg'
+
 const Card = ({ id, marca, nombre, foto, capacidad, precio, encargado }) => {
+    const [ whatsappLinkClassName, setWhatsappLinkClassName] = useState('whatsapp-link inactive')
     const [ isImageLoaded, setIsImageLoaded] = useState(false)
     const classNameImage = isImageLoaded ? 'card-image' : 'inactive'
+    const defaultMessage = 'Hola, estoy interesado en el producto'
+
+    const cardHover = () => {
+        setWhatsappLinkClassName('whatsapp-link')
+    }
+
+    const cardMouseOut = () => {
+        setWhatsappLinkClassName('whatsapp-link inactive')
+    }
 
     return (
-        <article className='card-container' key={id}>
+        <article onMouseOver={cardHover} onMouseOut={cardMouseOut} className='card-container' key={id}>
             <div className='card-photo'>
                 
                 {!isImageLoaded &&  < ImagePlaceholder /> }
@@ -20,6 +33,9 @@ const Card = ({ id, marca, nombre, foto, capacidad, precio, encargado }) => {
             </div>
             <div className='card-footer'>
                 <h5 className='card-price'>{`$${precio}`}</h5>
+                <a className={whatsappLinkClassName} href={`https://wa.me/543446544456?text=${defaultMessage} ${marca} - ${nombre} x${capacidad}ml`} target='_blank' rel='noreferrer'>
+                    <img className='whatsapp-image' src={whatsapp} alt="Enviar mensaje de texto con ese mensaje" />
+                </a>
             </div>
             {encargado && 
                 <span className='card-incoming'>proximamente</span>

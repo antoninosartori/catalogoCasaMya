@@ -4,12 +4,13 @@ header{
     left: 0;
     width: 100vw;
     height: 100px;
-    background-color: var(--colorSecundario);
-    color: var(--colorPrincipal);
+    background-color: var(--colorPrincipal);
+    color: var(--colorSecundario);
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 100;
+    box-shadow: 1px 1px 5px 1px #0000007e;
     }
 
 header nav{
