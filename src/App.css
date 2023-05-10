@@ -31,6 +31,10 @@ main section{
     font-family: var(--fontPrincipal);
 }
 
+.formSearch-container form input:focus{
+    outline-color: var(--colorSecundario);
+}
+
 .resetSearch{
     position: absolute;
     right: 20px;
