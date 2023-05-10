@@ -1,0 +1,36 @@
+.upArrow-container{
+    width: 100%;
+    max-width: 992px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.upArrow-button{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding: 5px 15px;
+    cursor: pointer;
+}
+
+.upArrow-button:hover{
+    opacity: .8;
+}
+
+.upArrow-image{
+    width: 20px;
+    height: auto;
+    object-fit: cover;
+    animation-name: arrowOpacity;
+    animation-timing-function:linear;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction:alternate-reverse;
+}
+
+@keyframes arrowOpacity {
+    0%{opacity: 1;}
+    50%{opacity: .8;}
+    100%{opacity: .5;}
+}

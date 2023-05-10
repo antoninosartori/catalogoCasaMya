@@ -6,6 +6,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import LoadingSpinner from './components/LoadingSpinner'
 import Card from './components/Card'
+import GoUpArrow from './components/GoUpArrow'
 
 // constantes
 const URL_API = 'https://sheet.best/api/sheets/4c6e4bf6-c0ef-4341-a895-90f7a0ca8e28/tabs/Catalogo'
@@ -103,6 +104,9 @@ function App() {
               ))
             }
           </div>
+
+          < GoUpArrow />
+
         </section>
       </main>
 

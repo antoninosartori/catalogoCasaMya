@@ -21,6 +21,7 @@
 }
 
 .card-photo{
+    padding: 40px 0;
     position: relative;
     display: flex;
     align-items: center;
