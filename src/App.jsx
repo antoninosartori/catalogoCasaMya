@@ -15,29 +15,34 @@ function App() {
   const [ filteredFragances, setFilteredFragances] = useState([])
   const [ search, setSearch] = useState('')
   const [ isLoading, setIsLoading] = useState(false)
+  const [ title, setTitle] = useState('Catálogo')
   
 
   const handleFamaleFragance = (event) => {
     event.preventDefault()
     const filter = fragances.filter(fragance => !fragance.esMasculino)
     setFilteredFragances(filter)
+    setTitle('Fragancias femeninas')
   }
 
   const handleMaleFragance = (event) => {
     event.preventDefault()
     const filter = fragances.filter(fragance => fragance.esMasculino)
     setFilteredFragances(filter)
+    setTitle('Fragancias masculinas')
   }
 
   const handleAllFragance = (event) => {
     event.preventDefault()
     setFilteredFragances(fragances)
+    setTitle('Catálogo')
   }
 
   const onChangeSearch = (event) => {
     const value = event.target.value.toLowerCase()
     setSearch(value)
     filterSearch(value)
+    setTitle(value === '' ? 'Catálogo' : 'Resultados de la búsqueda')
   }
 
   const filterSearch = (searchValue) => {
@@ -49,6 +54,7 @@ function App() {
   const resetSearch = () => {
     setFilteredFragances(fragances)
     setSearch('')
+    setTitle('Catálogo')
   }
 
   useEffect(() => {
@@ -86,7 +92,7 @@ function App() {
         </section>
 
         <section className='content-container'>
-          <h3>Catálogo</h3>
+          <h3>{title}</h3>
           <div className='content-group'>
             {isLoading &&
               < LoadingSpinner />

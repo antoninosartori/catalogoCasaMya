@@ -41,7 +41,7 @@
     color: var(--colorSecundario);
     border: 1px solid var(--colorSecundario);
     padding: 10px 5px;
-    border-radius: 20px;
+    border-radius: 50px;
     opacity: .7;
     
 }
@@ -59,6 +59,7 @@
     text-transform: uppercase;
     font-weight:400;
 }
+
 .card-productName{
     font-size: var(--fontSizeChica);
     text-transform: uppercase;
@@ -79,14 +80,15 @@
 .card-incoming{
     position: absolute;
     font-size: var(--fontSizeNormal);
-    padding: 5px;
+    padding: 5px 15px;
     z-index: 10;
     color: var(--colorSecundario);
+    background-color: #00000018;
     transform: rotate(45deg) translateX(50%);
-    left: 10px;
+    left: 0px;
     top: 30px;
     border: 1px solid var(--colorSecundario);
-    border-radius: 10px;
+    border-radius: 50px;
     opacity: .8;
     transition: .1s;
 }
@@ -95,6 +97,16 @@
     background-color: var(--colorSecundario);
     color: var(--colorPrincipal);
     opacity: 1;
+    transition: .1s;
+}
+
+.card-container:hover .card-productName{
+    font-weight: 400;
+    transition: .1s;
+}
+
+.card-container:hover .card-productBrand{
+    font-weight: 100;
     transition: .1s;
 }
 

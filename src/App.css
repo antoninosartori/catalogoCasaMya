@@ -27,7 +27,7 @@ main section{
     border: none;
     padding: 10px;
     border: 1px solid var(--colorSecundario);
-    border-radius: 15px;
+    border-radius: 50px;
     font-family: var(--fontPrincipal);
 }
 
@@ -54,6 +54,7 @@ main section{
 
 .filter-button{
     background-color: transparent;
+    color: var(--colorSecundario);
     outline: none;
     border: none;
     font-family: var(--fontPrincipal);
