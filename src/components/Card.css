@@ -21,7 +21,8 @@
 }
 
 .card-photo{
-    padding: 40px 0;
+    /* padding: 40px 0; */
+    padding: 20px 0;
     position: relative;
     display: flex;
     align-items: center;
@@ -36,7 +37,7 @@
     object-fit: contain;
 }
 
-.card-capacity{
+/* .card-capacity{
     position: absolute;
     top: 20px;
     right: 20px;
@@ -45,7 +46,15 @@
     padding: 10px 5px;
     border-radius: 50px;
     opacity: .7;
-    
+} */
+
+.card-capacity{
+    color: var(--colorSecundario);
+    border: 1px solid var(--colorSecundario);
+    margin: 8px 0;
+    padding: 10px 5px;
+    border-radius: 50px;
+    opacity: .7;
 }
 
 
@@ -97,7 +106,8 @@
 
 .card-incoming{
     position: absolute;
-    bottom: 100px;
+    /* bottom: 100px; */
+    bottom: 135px;
     padding: 10px 15px 5px 15px;
     z-index: 10;
     font-size: var(--fontSizeNormal);

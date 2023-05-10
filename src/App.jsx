@@ -22,7 +22,7 @@ function App() {
   const [ title, setTitle] = useState('Catálogo')
   
 
-  const handleFamaleFragance = (event) => {
+/*   const handleFamaleFragance = (event) => {
     event.preventDefault()
     const filter = fragances.filter(fragance => !fragance.esMasculino)
     setFilteredFragances(filter)
@@ -34,12 +34,20 @@ function App() {
     const filter = fragances.filter(fragance => fragance.esMasculino)
     setFilteredFragances(filter)
     setTitle('Fragancias masculinas')
-  }
+  } */
 
   const handleAllFragance = (event) => {
     event.preventDefault()
     setFilteredFragances(fragances)
     setTitle('Catálogo')
+  }
+
+  const handleChangeFragance = (event) => {
+    event.preventDefault()
+    const genre = event.target.value
+    const filter = fragances.filter(fragance => fragance.genero === genre)
+    setFilteredFragances(filter)
+    setTitle(`Fragancias de ${genre}`)
   }
 
   const onChangeSearch = (event) => {
@@ -87,9 +95,9 @@ function App() {
             <input onChange={onChangeSearch} type="text" placeholder='buscar fragancia' value={search}/>
             <span onClick={resetSearch} className='resetSearch'>X</span>
             <div className='filters-container'>
-              <button onClick={handleAllFragance} className='filter-button'>todas</button>
-              <button onClick={handleMaleFragance} className='filter-button'>fragancias masculinas</button>
-              <button onClick={handleFamaleFragance} className='filter-button'>fragancias femeninas</button>
+              <button onClick={handleAllFragance}  className='filter-button'>todas</button>
+              <button onClick={handleChangeFragance} value='hombre' className='filter-button'>fragancias masculinas</button>
+              <button onClick={handleChangeFragance}value='mujer' className='filter-button'>fragancias femeninas</button>
             </div>
           </form>
         </section>

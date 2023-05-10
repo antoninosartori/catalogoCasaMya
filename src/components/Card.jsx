@@ -25,12 +25,13 @@ const Card = ({ id, marca, nombre, foto, capacidad, precio, encargado }) => {
                 {!isImageLoaded &&  < ImagePlaceholder /> }
                    
                 <img onLoad={() => {setIsImageLoaded(true)}} className={classNameImage} src={foto} alt={`Imagen del producto ${marca} - ${nombre}`}/>
-                <span className='card-capacity'>{`${capacidad}ml`}</span>
+                {/* <span className='card-capacity'>{`${capacidad}ml`}</span> */}
             </div>
             <div className='card-body'>
                 {encargado && 
-                    <span className='card-incoming'>proximamente</span>
+                    <span className='card-incoming'>sin stock</span>
                 }
+                <span className='card-capacity'>{`${capacidad}ml`}</span>
                 <h4 className='card-productBrand'>{marca}</h4>
                 <h4 className='card-productName'>{nombre}</h4>
             </div>
