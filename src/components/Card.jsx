@@ -28,6 +28,9 @@ const Card = ({ id, marca, nombre, foto, capacidad, precio, encargado }) => {
                 <span className='card-capacity'>{`${capacidad}ml`}</span>
             </div>
             <div className='card-body'>
+                {encargado && 
+                    <span className='card-incoming'>proximamente</span>
+                }
                 <h4 className='card-productBrand'>{marca}</h4>
                 <h4 className='card-productName'>{nombre}</h4>
             </div>
@@ -37,9 +40,9 @@ const Card = ({ id, marca, nombre, foto, capacidad, precio, encargado }) => {
                     <img className='whatsapp-image' src={whatsapp} alt="Enviar mensaje de texto con ese mensaje" />
                 </a>
             </div>
-            {encargado && 
+           {/*  {encargado && 
                 <span className='card-incoming'>proximamente</span>
-            }
+            } */}
         </article>
     )
 }

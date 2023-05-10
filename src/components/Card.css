@@ -97,15 +97,12 @@
 
 .card-incoming{
     position: absolute;
-    font-size: var(--fontSizeNormal);
-    padding: 5px 15px;
+    bottom: 100px;
+    padding: 10px 15px 5px 15px;
     z-index: 10;
+    font-size: var(--fontSizeNormal);
     color: var(--colorSecundario);
-    background-color: #00000018;
-    transform: rotate(45deg) translateX(50%);
-    left: 0px;
-    top: 30px;
-    border: 1px solid var(--colorSecundario);
+    text-transform: uppercase;
     border-radius: 50px;
     opacity: .8;
     transition: .1s;
