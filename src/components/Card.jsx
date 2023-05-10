@@ -1,10 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Card.css'
+import ImagePlaceholder from './ImagePlaceholder'
 const Card = ({ id, marca, nombre, foto, capacidad, precio, encargado }) => {
+    const [ isImageLoaded, setIsImageLoaded] = useState(false)
+    const classNameImage = isImageLoaded ? 'card-image' : 'inactive'
+
     return (
         <article className='card-container' key={id}>
             <div className='card-photo'>
-                <img className='card-image' src={foto} alt="" />
+                
+                {!isImageLoaded &&  < ImagePlaceholder /> }
+                   
+                <img onLoad={() => {setIsImageLoaded(true)}} className={classNameImage} src={foto} alt={`Imagen del producto ${marca} - ${nombre}`}/>
                 <span className='card-capacity'>{`${capacidad}ml`}</span>
             </div>
             <div className='card-body'>

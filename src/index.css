@@ -23,3 +23,7 @@ body{
   overflow-x: hidden;
   user-select: none;
 }
+
+.inactive{
+  display: none;
+}

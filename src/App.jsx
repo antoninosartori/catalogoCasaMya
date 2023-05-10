@@ -102,7 +102,6 @@ function App() {
                 < Card key={fragance.id} id={fragance.id} marca={fragance.marca} nombre={fragance.nombre} foto={fragance.foto} capacidad={fragance.capacidad} precio={fragance.precio} encargado={fragance.encargado} />
               ))
             }
-            
           </div>
         </section>
       </main>

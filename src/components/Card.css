@@ -31,6 +31,7 @@
     width: 90%;
     height: auto;
     max-height: 200px;
+    min-height: 100px;
     object-fit: contain;
 }
 

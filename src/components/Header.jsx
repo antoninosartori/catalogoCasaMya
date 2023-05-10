@@ -6,7 +6,7 @@ const Header = () => {
         <header>
             <nav>
                 <h1>Casa Mya</h1>
-                <h2>articulos de limpieza - perfumeria</h2>
+                <h2>articulos de limpieza - perfumería</h2>
             </nav>
         </header>
     )
