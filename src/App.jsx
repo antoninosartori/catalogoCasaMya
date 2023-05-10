@@ -7,6 +7,7 @@ import Footer from './components/Footer'
 import LoadingSpinner from './components/LoadingSpinner'
 import Card from './components/Card'
 import GoUpArrow from './components/GoUpArrow'
+import CardPlaceholder from './components/CardPlaceholder'
 
 // constantes
 const URL_API = 'https://sheet.best/api/sheets/4c6e4bf6-c0ef-4341-a895-90f7a0ca8e28/tabs/Catalogo'
@@ -16,6 +17,7 @@ function App() {
   const [ filteredFragances, setFilteredFragances] = useState([])
   const [ search, setSearch] = useState('')
   const [ isLoading, setIsLoading] = useState(false)
+  const [ error, setError] = useState('')
   const [ title, setTitle] = useState('Catálogo')
   
 
@@ -48,7 +50,6 @@ function App() {
 
   const filterSearch = (searchValue) => {
     const filter = fragances.filter(fragance => fragance.nombre.includes(searchValue) || fragance.marca.includes(searchValue))
-    console.log(filter)
     setFilteredFragances(filter)
   }
 
@@ -66,11 +67,12 @@ function App() {
       .then((data) => {
         setFilteredFragances(data);
         setFragances(data);
-        console.log(data)
+        
         setIsLoading(false)
       })
       .catch((error) => {
         setIsLoading(false)
+        setError(true)
         console.error(error);
       });
   }, [])
@@ -93,10 +95,14 @@ function App() {
         </section>
 
         <section className='content-container'>
+          {error && <h2>Lo siento, ha ocurrido un error, intente nuevamente</h2> }
           <h3>{title}</h3>
           <div className='content-group'>
             {isLoading &&
-              < LoadingSpinner />
+              <div className='loading-container'>
+                < LoadingSpinner />
+                < CardPlaceholder />
+              </div>
             }
             {filteredFragances &&
               filteredFragances.map(fragance => (
