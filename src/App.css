@@ -72,6 +72,24 @@ main section{
     transition: .3s;
 }
 
+.brands-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.brand-image{
+    width: 100px;
+    aspect-ratio: 3/2;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+.brand-image:hover{
+    opacity: .8;
+}
+
 .content-container{
     width: 100%;
     display: flex;
@@ -81,7 +99,7 @@ main section{
 }
 
 .content-container h3{
-    padding-bottom: 50px;
+    padding: 50px 0;
 }
 
 .content-group{
@@ -119,6 +137,10 @@ main section{
         gap: 20px;
     }
     .loading-cardsGroup{
+        justify-content: center;
+    }
+    .brands-container{
+        flex-wrap: wrap;
         justify-content: center;
     }
 }
