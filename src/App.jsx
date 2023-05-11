@@ -108,8 +108,10 @@ function App() {
     fetch(URL_API)
       .then((response) => response.json())
       .then((data) => {
-        setFilteredFragances(data);
-        setFragances(data);
+        const sortedData = data.sort((a,b) => b.precio - a.precio)
+        console.log({sortedData})
+        setFilteredFragances(sortedData);
+        setFragances(sortedData);
         setIsLoading(false)
       })
       .catch((error) => {
