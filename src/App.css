@@ -84,10 +84,11 @@ main section{
     aspect-ratio: 3/2;
     object-fit: contain;
     cursor: pointer;
+    filter: grayscale(100%);
 }
 
 .brand-image:hover{
-    opacity: .8;
+    filter: grayscale(0%)
 }
 
 .content-container{
@@ -139,9 +140,29 @@ main section{
     .loading-cardsGroup{
         justify-content: center;
     }
-    .brands-container{
+    /* .brands-container{
         flex-wrap: wrap;
         justify-content: center;
-    }
+    } */
+
 }
 
+@media screen and (max-width: 768px){
+    .brands-container{
+        padding-bottom: 20px;
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+        justify-content: space-between;
+        gap: 40px;
+    }
+
+    .brands-container::-webkit-scrollbar{
+        background-color:transparent;
+        height: 3px;
+
+    }
+    .brands-container::-webkit-scrollbar-thumb{
+        border-radius: 50px;
+        background-color: var(--colorSecundario);
+    }
+}
