@@ -4,7 +4,7 @@ import ImagePlaceholder from './ImagePlaceholder'
 
 import whatsapp from '../assets/whatsapp.svg'
 
-const Card = ({ id, marca, nombre, foto, capacidad, precio, encargado }) => {
+const Card = ({ id, marca, nombre, foto, capacidad, precio, estado }) => {
     const [ whatsappLinkClassName, setWhatsappLinkClassName] = useState('whatsapp-link inactive')
     const [ isImageLoaded, setIsImageLoaded] = useState(false)
     const classNameImage = isImageLoaded ? 'card-image' : 'inactive'
@@ -28,8 +28,8 @@ const Card = ({ id, marca, nombre, foto, capacidad, precio, encargado }) => {
                 {/* <span className='card-capacity'>{`${capacidad}ml`}</span> */}
             </div>
             <div className='card-body'>
-                {encargado && 
-                    <span className='card-incoming'>sin stock</span>
+                {estado && 
+                    <span className='card-incoming'>{estado}</span>
                 }
                 <span className='card-capacity'>{`${capacidad}ml`}</span>
                 <h4 className='card-productBrand'>{marca}</h4>
