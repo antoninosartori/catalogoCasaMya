@@ -29,7 +29,7 @@ const Card = ({ id, marca, nombre, foto, capacidad, precio, estado }) => {
             </div>
             <div className='card-body'>
                 {estado && 
-                    <span className='card-incoming'>{estado}</span>
+                    <span className='card-status'>{estado}</span>
                 }
                 <span className='card-capacity'>{`${capacidad}ml`}</span>
                 <h4 className='card-productBrand'>{marca}</h4>

@@ -109,13 +109,13 @@
     object-fit: cover;
 }
 
-.card-incoming {
+.card-status {
     position: absolute;
     /* bottom: 100px; */
     bottom: 135px;
     padding: 10px 15px 5px 15px;
     z-index: 10;
-    font-size: var(--fontSizeNormal);
+    font-size: var(--fontSizeChica);
     color: var(--colorSecundario);
     text-transform: uppercase;
     border-radius: 50px;
@@ -123,7 +123,6 @@
     transition: .1s;
 }
 
-.card-container:hover .card-incoming,
 .card-container:hover .card-capacity {
     background-color: var(--colorSecundario);
     color: var(--colorPrincipal);
