@@ -87,6 +87,28 @@ main section{
     filter: grayscale(100%);
 }
 
+.allBrandsHTML-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    padding: 10px;
+    border: 1px solid var(--colorSecundario);
+    border-radius: 50px 10px 50px 10px;
+    -moz-border-radius: 50px 10px 50px 10px;
+    -webkit-border-radius: 50px 10px 50px 10px;
+    cursor: pointer;
+}
+
+.allBrandsHTML-container:hover{
+    background-color: var(--colorSecundario);
+    color: var(--colorPrincipal);
+}
+
+.allBrandsHTML-container p{
+    text-align: center;
+}
+
 .brand-image:hover{
     filter: grayscale(0%)
 }
@@ -164,5 +186,11 @@ main section{
     .brands-container::-webkit-scrollbar-thumb{
         border-radius: 50px;
         background-color: var(--colorSecundario);
+    }
+
+    .allBrandsHTML-container{
+        border-radius: 30px 10px 30px 10px;
+        -moz-border-radius: 30px 10px 30px 10px;
+        -webkit-border-radius: 30px 10px 30px 10px;
     }
 }

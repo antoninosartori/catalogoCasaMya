@@ -140,6 +140,9 @@ function App() {
           {error && <h2>Lo siento, ha ocurrido un error, intente nuevamente</h2>}
           <div className='brands-container'>
             { !isBrandImageLoaded && < BrandPlaceholder /> }
+            <div onClick={resetSearch} className='allBrandsHTML-container'>
+              <p>todas las marcas</p>
+            </div>
             {brandsImages.map(brand => (
               <img onLoad={() => { setIsBrandImageLoaded(true) }} onClick={chooseBrand} className={classNameBrandImage} key={brand.name} src={brand.imagePath} alt={brand.name} value={brand.name} />
             ))}
