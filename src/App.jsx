@@ -9,6 +9,7 @@ import Card from './components/Card'
 import GoUpArrow from './components/GoUpArrow'
 import CardPlaceholder from './components/CardPlaceholder'
 import CardItemPlaceholder from './components/CardItemPlaceholder'
+import BrandPlaceholder from './components/BrandPlaceholder'
 
 // constantes
 const URL_API = 'https://sheet.best/api/sheets/4c6e4bf6-c0ef-4341-a895-90f7a0ca8e28/tabs/Catalogo'
@@ -37,26 +38,28 @@ const brandsImages = [
 
 function App() {
   const [fragances, setFragances] = useState([])
-  const [ filteredFragances, setFilteredFragances] = useState([])
-  const [ search, setSearch] = useState('')
-  const [ isLoading, setIsLoading] = useState(false)
-  const [ error, setError] = useState('')
-  const [ title, setTitle] = useState('Catálogo')
+  const [filteredFragances, setFilteredFragances] = useState([])
+  const [search, setSearch] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState('')
+  const [title, setTitle] = useState('Catálogo')
+  const [isBrandImageLoaded, setIsBrandImageLoaded] = useState(false)
+  const classNameBrandImage = isBrandImageLoaded ? 'brand-image' : 'inactive'
+
+
+  /*   const handleFamaleFragance = (event) => {
+      event.preventDefault()
+      const filter = fragances.filter(fragance => !fragance.esMasculino)
+      setFilteredFragances(filter)
+      setTitle('Fragancias femeninas')
+    }
   
-
-/*   const handleFamaleFragance = (event) => {
-    event.preventDefault()
-    const filter = fragances.filter(fragance => !fragance.esMasculino)
-    setFilteredFragances(filter)
-    setTitle('Fragancias femeninas')
-  }
-
-  const handleMaleFragance = (event) => {
-    event.preventDefault()
-    const filter = fragances.filter(fragance => fragance.esMasculino)
-    setFilteredFragances(filter)
-    setTitle('Fragancias masculinas')
-  } */
+    const handleMaleFragance = (event) => {
+      event.preventDefault()
+      const filter = fragances.filter(fragance => fragance.esMasculino)
+      setFilteredFragances(filter)
+      setTitle('Fragancias masculinas')
+    } */
 
   const handleAllFragance = (event) => {
     event.preventDefault()
@@ -85,7 +88,7 @@ function App() {
   }
 
   const chooseBrand = (event) => {
-    
+
     const value = event.target.alt
     setTitle(value === '' ? 'Catálogo' : `Fragancias de ${value}`)
     const valueToLowerCase = value.toLowerCase()
@@ -123,22 +126,23 @@ function App() {
       <main>
         <section className='formSearch-container'>
           <form>
-            <input onChange={onChangeSearch} type="text" placeholder='buscar fragancia' value={search}/>
+            <input onChange={onChangeSearch} type="text" placeholder='buscar fragancia' value={search} />
             <span onClick={resetSearch} className='resetSearch'>X</span>
             <div className='filters-container'>
-              <button onClick={handleAllFragance}  className='filter-button'>todas</button>
+              <button onClick={handleAllFragance} className='filter-button'>todas</button>
               <button onClick={handleChangeFragance} value='hombre' className='filter-button'>fragancias masculinas</button>
-              <button onClick={handleChangeFragance}value='mujer' className='filter-button'>fragancias femeninas</button>
+              <button onClick={handleChangeFragance} value='mujer' className='filter-button'>fragancias femeninas</button>
             </div>
           </form>
         </section>
 
         <section className='content-container'>
-          {error && <h2>Lo siento, ha ocurrido un error, intente nuevamente</h2> }
+          {error && <h2>Lo siento, ha ocurrido un error, intente nuevamente</h2>}
           <div className='brands-container'>
-            { brandsImages.map(brand => (
-              <img onClick={chooseBrand} className='brand-image' key={brand.name} src={brand.imagePath} alt={brand.name} value={brand.name} />
-            )) }
+            { !isBrandImageLoaded && < BrandPlaceholder /> }
+            {brandsImages.map(brand => (
+              <img onLoad={() => { setIsBrandImageLoaded(true) }} onClick={chooseBrand} className={classNameBrandImage} key={brand.name} src={brand.imagePath} alt={brand.name} value={brand.name} />
+            ))}
           </div>
           <h3>{title}</h3>
           <div className='content-group'>
