@@ -37,16 +37,23 @@ main section{
 
 .resetSearch{
     position: absolute;
-    right: 20px;
-    top: 8px;
+    right: 5px;
+    top: 5px;
     cursor: pointer;
     transition: .1s;
-    padding: 4px 2px;
+    /* padding: 4px 2px; */
+    padding: 6px 7px 2px 7px;
+    border: 1px solid var(--colorSecundario);
+    border-radius: 50%;
+    
 }
 
 .resetSearch:hover{
     opacity: .8;
     transition: .1s;
+    background-color: var(--colorSecundario);
+    color: var(--colorPrincipal);
+
 }
 
 .filters-container{
