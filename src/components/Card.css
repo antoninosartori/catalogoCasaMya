@@ -123,6 +123,10 @@
     transition: .1s;
 }
 
+.card-status__unavailable{
+    color: #d81a1a;
+}
+
 .card-container:hover .card-capacity {
     background-color: var(--colorSecundario);
     color: var(--colorPrincipal);

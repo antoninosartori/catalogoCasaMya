@@ -18,6 +18,8 @@ const Card = ({ id, marca, nombre, foto, capacidad, precio, estado }) => {
         setWhatsappLinkClassName('whatsapp-link inactive')
     }
 
+    const cardStatusClassName = estado === 'agotado' ? 'card-status card-status__unavailable' : 'card-status'
+
     return (
         <article onMouseOver={cardHover} onMouseOut={cardMouseOut} className='card-container' key={id}>
             <div className='card-photo'>
@@ -29,7 +31,7 @@ const Card = ({ id, marca, nombre, foto, capacidad, precio, estado }) => {
             </div>
             <div className='card-body'>
                 {estado && 
-                    <span className='card-status'>{estado}</span>
+                    <span className={cardStatusClassName}>{estado}</span>
                 }
                 <span className='card-capacity'>{`${capacidad}ml`}</span>
                 <h4 className='card-productBrand'>{marca}</h4>
