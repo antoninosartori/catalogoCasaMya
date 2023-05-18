@@ -166,7 +166,7 @@ main section{
 }
 
 .contactForm{
-    padding: 50px 0;
+    padding-bottom: 50px;
     width: 50%;
     margin: 50px 0;
     display: flex;
@@ -219,6 +219,34 @@ main section{
     text-align: center;
 }
 
+.separator{
+    display: flex;
+    justify-content: center;
+}
+
+.separador_box-relative{
+    padding-top: 20px;
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+}
+
+.separador-item1, .separador-item2{
+    width: 100px;
+}
+
+.separador-item3{
+    width: 60px;
+    -moz-transform: scale(-1, -1);
+    -o-transform: scale(-1, -1);
+    -webkit-transform: scale(-1, -1);
+    transform: scale(-1, 1);
+}
+
+.separador-item4{
+    width: 60px;
+}
+
 .messageStatus{
     text-transform: uppercase;
 }
@@ -264,5 +292,21 @@ main section{
         border-radius: 30px 10px 30px 10px;
         -moz-border-radius: 30px 10px 30px 10px;
         -webkit-border-radius: 30px 10px 30px 10px;
+    }
+
+    .separador-item1, .separador-item2{
+        width: 60px;
+    }
+    
+    .separador-item3{
+        width: 40px;
+        -moz-transform: scale(-1, -1);
+        -o-transform: scale(-1, -1);
+        -webkit-transform: scale(-1, -1);
+        transform: scale(-1, 1);
+    }
+    
+    .separador-item4{
+        width: 40px;
     }
 }

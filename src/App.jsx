@@ -13,6 +13,11 @@ import BrandPlaceholder from './components/BrandPlaceholder'
 import emailjs from '@emailjs/browser';
 // constantes
 import { URL_API, brandsImages } from './consts/const'
+// assets
+import fragance from './assets/fragance.svg'
+import fragance2 from './assets/fragance2.svg'
+import fragance3 from './assets/fragance3.svg'
+import fragance4 from './assets/fragance4.svg'
 
 function App() {
   const [fragances, setFragances] = useState([])
@@ -188,11 +193,22 @@ function App() {
           </div>
 
           < GoUpArrow />
+          
+        </section>
+        
+        <section className='separator'>
+          <div className='separador_box-relative'>
+            <img className='separador-image separador-item1' src={fragance2} alt="imagen de una fragancia" />
+            <img className='separador-image separador-item4' src={fragance4} alt="imagen de una fragancia" />
+            <img className='separador-image separador-item3' src={fragance3} alt="imagen de una fragancia" />
+            <img className='separador-image separador-item2' src={fragance} alt="imagen de una fragancia" />
+          </div>
 
         </section>
 
         <section className='contactForm-container'>
           <form ref={form} onSubmit={sendEmail} className='contactForm'>
+            <h3>¡Hablémos!</h3>
             <p>Los productos publicados son originales, cerrados y con su sello de importación.</p>
             <p>¿Tenés alguna pregunta o querés encargar algún producto?</p>
             <input required className='contactForm-input' type="text" placeholder='Escribe tu nombre' name='name' />
