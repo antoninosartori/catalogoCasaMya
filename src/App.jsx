@@ -1,6 +1,5 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import './App.css'
-
 // componentes
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -10,7 +9,8 @@ import GoUpArrow from './components/GoUpArrow'
 // import CardPlaceholder from './components/CardPlaceholder'
 import CardItemPlaceholder from './components/CardItemPlaceholder'
 import BrandPlaceholder from './components/BrandPlaceholder'
-
+// emailjs
+import emailjs from '@emailjs/browser';
 // constantes
 import { URL_API, brandsImages } from './consts/const'
 
@@ -22,7 +22,30 @@ function App() {
   const [error, setError] = useState('')
   const [title, setTitle] = useState('Catálogo')
   const [isBrandImageLoaded, setIsBrandImageLoaded] = useState(false)
-  const classNameBrandImage = isBrandImageLoaded ? 'brand-image' : 'inactive'
+  const classNameBrandImage = isBrandImageLoaded ? 'brand-image' : 'inactive';
+  const [isDisabled, setIsDisabled] = useState(false)
+  const [messageResult, setMessageResults] = useState('')
+
+  const form = useRef();
+
+  const sendEmail = (event) => {
+    event.preventDefault();
+
+    // verificar
+    
+    setIsDisabled(true)
+    emailjs.sendForm('service_rqdt8w9', 'template_2dk062d', form.current, '1BLpRCJNGW4edyOyK')
+      .then((result) => {
+          console.log(result.text);
+          setIsDisabled(false)
+          setMessageResults('mensaje enviado correctamente')
+          form.current.reset()
+          setInterval(() => setMessageResults(''), 3000)
+      }, (error) => {
+          console.log(error.text);
+          setMessageResults('lo siento, no pudimos enviar su mensaje')
+      });
+  };
 
 
   /*   const handleFamaleFragance = (event) => {
@@ -61,7 +84,7 @@ function App() {
   }
 
   const filterSearch = (searchValue) => {
-    const filter = fragances.filter(fragance => fragance.nombre.includes(searchValue) || fragance.marca.includes(searchValue))
+    const filter = fragances.filter(fragance => fragance.nombre.includes(searchValue) || fragance.marca.includes(searchValue) || fragance.genero.includes(searchValue))
     if(filter.length === 0){ setTitle(`No se han encontrado productos`) }
     setFilteredFragances(filter)
   }
@@ -153,6 +176,20 @@ function App() {
           < GoUpArrow />
 
         </section>
+
+        <section className='contactForm-container'>
+          <form ref={form} onSubmit={sendEmail} className='contactForm'>
+            <p>Los productos publicados son originales, cerrados y con su sello de importación.</p>
+            <p>¿Tenés alguna pregunta o querés encargar algún producto?</p>
+            <input className='contactForm-input' type="text" placeholder='Escribe tu nombre' name='name' />
+            <input className='contactForm-input' type="email" placeholder='Escribe tu email' name='email' />
+            <textarea className='contactForm-input' id="" cols="30" rows="10" placeholder='Escibe tu mensaje' name='message'></textarea>
+            <button disabled={isDisabled} className='contactForm-sendButton'>enviar</button>
+            {isDisabled && <LoadingSpinner/> }
+            {messageResult && <p className='messageStatus'>{messageResult}</p>}
+          </form>
+        </section>
+
       </main>
 
       < Footer />

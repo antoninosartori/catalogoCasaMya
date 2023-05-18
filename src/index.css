@@ -25,6 +25,16 @@ body{
   scroll-behavior: smooth;
 }
 
+h1{
+  font-size: var(--fontSizeGrande);
+}
+h2{
+  font-size: var(--fontSizeNormal);
+}
+h3{
+  font-size: var(--fontSizeNormal);
+}
+
 .inactive{
   display: none;
 }
