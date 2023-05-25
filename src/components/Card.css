@@ -1,6 +1,7 @@
 .card-container {
     position: relative;
     width: 300px;
+    min-height: 400px;
     margin-bottom: 40px;
     display: flex;
     flex-direction: column;
@@ -81,8 +82,24 @@
     position: relative;
     padding: 10px 0;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.card-discount{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 100;
+    font-size: var(--fontSizeChica);
+}
+
+.card-discount__price{
+    font-size: var(--fontSizeChica);
+
+    font-weight: 100;
+    text-decoration: line-through;
 }
 
 .card-price {
@@ -112,7 +129,8 @@
 .card-status {
     position: absolute;
     /* bottom: 100px; */
-    bottom: 135px;
+    /* bottom: 135px; */
+    bottom: 37%;
     padding: 10px 15px 5px 15px;
     z-index: 10;
     font-size: var(--fontSizeChica);

@@ -1,26 +1,22 @@
-import { useEffect, useState, useRef } from 'react'
-import './App.css'
-// componentes
-import Header from './components/Header'
-import Footer from './components/Footer'
-import LoadingSpinner from './components/LoadingSpinner'
-import Card from './components/Card'
-import GoUpArrow from './components/GoUpArrow'
-// import CardPlaceholder from './components/CardPlaceholder'
-import CardItemPlaceholder from './components/CardItemPlaceholder'
-import BrandPlaceholder from './components/BrandPlaceholder'
+import React, { useEffect, useRef, useState } from 'react'
+import '../App.css'
+import LoadingSpinner from '../components/LoadingSpinner'
+import Card from '../components/Card'
+import GoUpArrow from '../components/GoUpArrow'
+// import CardPlaceholder from '../components/CardPlaceholder'
+import CardItemPlaceholder from '../components/CardItemPlaceholder'
+import BrandPlaceholder from '../components/BrandPlaceholder'
 // emailjs
 import emailjs from '@emailjs/browser';
 // constantes
-import { URL_API, brandsImages } from './consts/const'
+import { URL_API, brandsImages } from '../consts/const'
 // assets
-import fragance from './assets/fragance.svg'
-import fragance2 from './assets/fragance2.svg'
-import fragance3 from './assets/fragance3.svg'
-import fragance4 from './assets/fragance4.svg'
-
-function App() {
-  const [fragances, setFragances] = useState([])
+import fragance from '../assets/fragance.svg'
+import fragance2 from '../assets/fragance2.svg'
+import fragance3 from '../assets/fragance3.svg'
+import fragance4 from '../assets/fragance4.svg'
+const HomePage = () => {
+    const [fragances, setFragances] = useState([])
   const [filteredFragances, setFilteredFragances] = useState([])
   const [search, setSearch] = useState('')
   const [isLoading, setIsLoading] = useState(false)
@@ -140,12 +136,8 @@ function App() {
         console.error(error);
       });
   }, [])
-
-  return (
-    <>
-      < Header />
-
-      <main>
+    return(
+        <main>
         <section className='formSearch-container'>
           <form>
             <input onChange={onChangeSearch} type="text" placeholder='buscar fragancia' value={search} />
@@ -187,7 +179,7 @@ function App() {
             }
             {filteredFragances &&
               filteredFragances.map(fragance => (
-                < Card key={fragance.id} id={fragance.id} marca={fragance.marca} nombre={fragance.nombre} foto={fragance.foto} capacidad={fragance.capacidad} precio={fragance.precio} estado={fragance.estado} precioSinDesc={fragance.precioSinDesc} desc={fragance.desc} />
+                < Card key={fragance.id} id={fragance.id} marca={fragance.marca} nombre={fragance.nombre} foto={fragance.foto} capacidad={fragance.capacidad} precio={fragance.precio} estado={fragance.estado} />
               ))
             }
           </div>
@@ -211,6 +203,7 @@ function App() {
             <h3>¡Hablémos!</h3>
             <p>Los productos publicados son originales, cerrados y con su sello de importación.</p>
             <p>¿Tenés alguna pregunta o querés encargar algún producto?</p>
+            
             <input required className='contactForm-input' type="text" placeholder='Escribe tu nombre' name='name' />
             <input required className='contactForm-input' type="email" placeholder='Escribe tu email' name='email' />
             <textarea required className='contactForm-input' id="" cols="30" rows="10" placeholder='Escibe tu mensaje' name='message'></textarea>
@@ -221,10 +214,7 @@ function App() {
         </section>
 
       </main>
-
-      < Footer />
-    </>
-  )
+    )
 }
 
-export default App
+export default HomePage

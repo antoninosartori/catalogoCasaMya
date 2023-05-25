@@ -4,7 +4,7 @@ import ImagePlaceholder from './ImagePlaceholder'
 
 import whatsapp from '../assets/whatsapp.svg'
 
-const Card = ({ id, marca, nombre, foto, capacidad, precio, estado }) => {
+const Card = ({ id, marca, nombre, foto, capacidad, precio, estado, desc, precioSinDesc  }) => {
     const [ whatsappLinkClassName, setWhatsappLinkClassName] = useState('whatsapp-link inactive')
     const [ isImageLoaded, setIsImageLoaded] = useState(false)
     const classNameImage = isImageLoaded ? 'card-image' : 'inactive'
@@ -38,14 +38,17 @@ const Card = ({ id, marca, nombre, foto, capacidad, precio, estado }) => {
                 <h4 className='card-productName'>{nombre}</h4>
             </div>
             <div className='card-footer'>
+                {desc &&
+                    <div className='card-discount'>
+                        <span className='card-discount__off'>{`%${desc}`}</span>
+                        <h6 className='card-discount__price'>{`$${precioSinDesc}`}</h6>
+                    </div>
+                }
                 <h5 className='card-price'>{`$${precio}`}</h5>
                 <a className={whatsappLinkClassName} href={`https://wa.me/543446544456?text=${defaultMessage} ${marca} - ${nombre} x${capacidad}ml`} target='_blank' rel='noreferrer'>
                     <img className='whatsapp-image' src={whatsapp} alt="Enviar mensaje de texto con ese mensaje" />
                 </a>
             </div>
-           {/*  {encargado && 
-                <span className='card-incoming'>proximamente</span>
-            } */}
         </article>
     )
 }
