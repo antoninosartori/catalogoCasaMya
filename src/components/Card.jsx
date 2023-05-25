@@ -5,7 +5,7 @@ import ImagePlaceholder from './ImagePlaceholder'
 import whatsapp from '../assets/whatsapp.svg'
 
 const Card = ({ id, marca, nombre, foto, capacidad, precio, estado, desc, precioSinDesc  }) => {
-    const [ whatsappLinkClassName, setWhatsappLinkClassName] = useState('whatsapp-link inactive')
+    const [ whatsappLinkClassName, setWhatsappLinkClassName] = useState('whatsapp-link whatsapp-link__inactive')
     const [ isImageLoaded, setIsImageLoaded] = useState(false)
     const classNameImage = isImageLoaded ? 'card-image' : 'inactive'
     const defaultMessage = 'Hola, estoy interesado en el producto'
@@ -15,7 +15,7 @@ const Card = ({ id, marca, nombre, foto, capacidad, precio, estado, desc, precio
     }
 
     const cardMouseOut = () => {
-        setWhatsappLinkClassName('whatsapp-link inactive')
+        setWhatsappLinkClassName('whatsapp-link whatsapp-link__inactive')
     }
 
     const cardStatusClassName = estado === 'agotado' ? 'card-status card-status__unavailable' : 'card-status'

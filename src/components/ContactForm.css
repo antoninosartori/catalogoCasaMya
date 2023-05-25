@@ -1,0 +1,58 @@
+.contactForm-container{
+    display: flex;
+    justify-content: center;
+}
+
+.contactForm{
+    padding-bottom: 50px;
+    width: 50%;
+    margin: 50px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    background-color: var(--colorPrincipal);
+    border-radius: 40px;
+    box-shadow: 13px 13px 20px #e2e2e2, -13px -13px 20px #fff;
+}
+
+.contactForm-input{
+    resize: none;
+    width: 90%;
+    border: none;
+    background: none;
+    padding: 15px;
+    border-radius: 30px;
+    font-family: var(--fontPrincipal);
+    font-size: var(--fontSizeChica);
+    box-shadow: inset 8px 8px 8px #e0e0e0, inset -8px -8px 8px #fff;
+}
+
+.contactForm-input:focus{
+    outline: 1px solid var(--colorSecundario);
+}
+
+.contactForm-sendButton{
+    outline: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: var(--fontPrincipal);
+    text-transform: capitalize;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    border-radius: 15px;
+    box-shadow: 3px 3px 8px #c7c7c7, -3px -3px 8px #fff;
+    transition: .1s;
+}
+
+.contactForm-sendButton:hover{
+    box-shadow: 3px 3px 5px 1px #0000007e;
+    opacity: .9;
+    transition: .1s;
+}
+
+.contactForm p{
+    text-align: center;
+}
