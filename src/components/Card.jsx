@@ -1,21 +1,45 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import './Card.css'
 import ImagePlaceholder from './ImagePlaceholder'
 
-import whatsapp from '../assets/whatsapp.svg'
+// import whatsapp from '../assets/whatsapp.svg'
+import addCartImg from '../assets/cart.svg'
+import deleteImg from '../assets/delete.svg'
+import { appContext } from '../context/appContext'
 
-const Card = ({ id, marca, nombre, foto, capacidad, precio, estado, desc, precioSinDesc  }) => {
-    const [ whatsappLinkClassName, setWhatsappLinkClassName] = useState('whatsapp-link whatsapp-link__inactive')
+const Card = ({ id, marca, nombre, foto, capacidad, precio, estado, desc, precioSinDesc, isInCart }) => {
+    const { cart, setCart, setOpenCart, calculateTotal } = useContext(appContext)
+    const [ whatsappLinkClassName, setWhatsappLinkClassName] = useState('cart-image cart-image__inactive')
     const [ isImageLoaded, setIsImageLoaded] = useState(false)
     const classNameImage = isImageLoaded ? 'card-image' : 'inactive'
-    const defaultMessage = 'Hola, estoy interesado en el producto'
+   // const defaultMessage = 'Hola, estoy interesado en el producto'
+
+    const precioNum = Number(precio)
 
     const cardHover = () => {
-        setWhatsappLinkClassName('whatsapp-link')
+        setWhatsappLinkClassName('cart-image')
     }
 
     const cardMouseOut = () => {
-        setWhatsappLinkClassName('whatsapp-link whatsapp-link__inactive')
+        setWhatsappLinkClassName('cart-image cart-image__inactive')
+    }
+
+    const addToCart = () => {
+        const newProduct = {id, marca, nombre, foto, capacidad, precio: precioNum, estado, desc, precioSinDesc}
+        const isOnCart = cart.some(product => product.id === id)
+        if(isOnCart){ return }
+        const newCart = [...cart, newProduct]
+        setCart(newCart)
+        setOpenCart(true)
+    }
+
+    const removeFromCart = () => {
+        
+        const filter = cart.filter(product => product.id !== id )
+        setCart(filter)
+        if(filter.length === 0){
+            setOpenCart(false)
+        }
     }
 
     const cardStatusClassName = estado === 'agotado' ? 'card-status card-status__unavailable' : 'card-status'
@@ -45,9 +69,17 @@ const Card = ({ id, marca, nombre, foto, capacidad, precio, estado, desc, precio
                     </div>
                 }
                 <h5 className='card-price'>{`$${precio}`}</h5>
-                <a className={whatsappLinkClassName} href={`https://wa.me/543446544456?text=${defaultMessage} ${marca} - ${nombre} x${capacidad}ml`} target='_blank' rel='noreferrer'>
+                {/* <a className={whatsappLinkClassName} href={`https://wa.me/543446544456?text=${defaultMessage} ${marca} - ${nombre} x${capacidad}ml`} target='_blank' rel='noreferrer'>
                     <img className='whatsapp-image' src={whatsapp} alt="Enviar mensaje de texto con ese mensaje" />
-                </a>
+                </a> */}
+                {!isInCart
+                    ? <a className={whatsappLinkClassName} >
+                        <img onClick={addToCart} className='whatsapp-image' src={addCartImg} alt="Enviar mensaje de texto con ese mensaje" />
+                    </a>
+                    :
+                    <img onClick={removeFromCart} className='cart-product__deleteImg' src={deleteImg} alt="Eliminar producto del carrito" />
+                }
+                
             </div>
         </article>
     )

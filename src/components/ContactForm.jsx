@@ -43,15 +43,15 @@ const ContactForm = () => {
     return(
         <section className='contactForm-container'>
             <form ref={form} onSubmit={sendEmail} className='contactForm'>
-            <h3>¡Hablémos!</h3>
-            <p>Los productos publicados son originales, cerrados y con su sello de importación.</p>
-            <p>¿Tenés alguna pregunta o querés encargar algún producto?</p>
-            <input required className='contactForm-input' type="text" placeholder='Escribe tu nombre' name='name' />
-            <input required className='contactForm-input' type="email" placeholder='Escribe tu email' name='email' />
-            <textarea required className='contactForm-input' id="" cols="30" rows="10" placeholder='Escibe tu mensaje' name='message'></textarea>
-            <button disabled={isDisabled} className='contactForm-sendButton'>enviar</button>
-            {isDisabled && <LoadingSpinner/> }
-            {messageResult && <p className='messageStatus'>{messageResult}</p>}
+              <h3>¡Hablémos!</h3>
+              <p>Los productos publicados son originales, cerrados y con su sello de importación.</p>
+              <p>¿Tenés alguna pregunta o querés encargar algún producto?</p>
+              <input required className='contactForm-input' type="text" placeholder='Escribe tu nombre' name='name' />
+              <input required className='contactForm-input' type="email" placeholder='Escribe tu email' name='email' />
+              <textarea required className='contactForm-input' id="" cols="30" rows="10" placeholder='Escibe tu mensaje' name='message'></textarea>
+              <button disabled={isDisabled} className='contactForm-sendButton'>enviar</button>
+              {isDisabled && <LoadingSpinner/> }
+              {messageResult && <p className='messageStatus'>{messageResult}</p>}
             </form>
       </section>
     )

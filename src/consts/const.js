@@ -1,4 +1,6 @@
-export const URL_API = 'https://sheet.best/api/sheets/4c6e4bf6-c0ef-4341-a895-90f7a0ca8e28/tabs/Catalogo'
+//export const URL_API = 'https://sheet.best/api/sheets/4c6e4bf6-c0ef-4341-a895-90f7a0ca8e28/tabs/Catalogo'
+
+export const URL_API = 'https://api.steinhq.com/v1/storages/64727d17d27cdd09f0f6e219/Catalogo'
 export const brandsImages = [
   {
     name: 'Paco Rabanne',

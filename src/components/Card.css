@@ -107,7 +107,7 @@
     font-weight: 400;
 }
 
-.whatsapp-link {
+.cart-image {
     position: absolute;
     right: 20px;
     bottom: 20px;
@@ -116,11 +116,11 @@
     align-items: center;
 }
 
-.whatsapp-link:hover{
+.cart-image:hover{
     opacity: .8;
 }
 
-.whatsapp-link__inactive{
+.cart-image__inactive{
     display: none;
 }
 
@@ -128,6 +128,7 @@
     width: 40px;
     height: auto;
     object-fit: cover;
+    cursor: pointer;
 }
 
 .card-status {
@@ -167,7 +168,7 @@
 }
 
 @media screen and (max-width: 768px) {
-    .whatsapp-link__inactive{
+    .cart-image__inactive{
         display: block;
     }
 }

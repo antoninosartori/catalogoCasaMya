@@ -1,0 +1,126 @@
+.checkout-container{
+}
+
+.checkout-container h2{
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.checkout-section{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.checkout-cart, .checkout-payment{
+    width: 47%;
+}
+
+.checkout-cart .card-container{
+    min-height: max-content;
+    width: 100%;
+    box-shadow: none;
+    margin: 0;
+}
+
+.checkout-cart .card-photo .card-image{
+    width: 50px;  
+}
+
+.checkout-cart .card-body .card-capacity {
+    display: none;
+}
+
+.checkout-cart .card-footer{
+    flex-direction: row;
+    align-items: center;
+}
+
+.checkout-cart .card-footer .card-discount{
+    display: none;
+}
+
+.checkout-cart .card-footer .cart-product__deleteImg{
+    width: 20px;
+}
+
+.checkout-payment h4{
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.payment-footsprings{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    gap: 20px;
+}
+
+.footspring-group{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+    font-size: var(--fontSizeChica);
+    text-transform: uppercase;
+}
+
+.footspring-number{
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--colorSecundario);
+    color: var(--colorPrincipal);
+    font-weight: 100;
+    border: 1px solid var(--colorSecundario);
+    border-radius: 50%;
+}
+
+.footspring-text{
+    line-height: 20px;
+    font-weight: 400;
+    text-align: left;
+}
+
+.payment-buttons{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+}
+
+.payment-buttons .contactForm-sendButton{
+    text-transform: uppercase;
+}
+
+.payment-buttons .goBackCart{
+    padding: 0;
+    box-shadow: none;
+}
+
+@media screen and (max-width: 768px){
+    .checkout-section{
+        flex-direction: column;
+    }
+    .checkout-cart, .checkout-payment{
+        width: 100%;
+    }
+    .footspring-text{
+        text-align: center;
+    }
+    .checkout-payment__footer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-top: 20px;
+    }
+/*     .footspring-number{
+        margin: unset;
+    } */
+}
