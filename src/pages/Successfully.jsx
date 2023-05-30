@@ -65,7 +65,7 @@ const Successfully = () => {
                         <img className='whatsapp-image' src={whatsapp} alt="Enviar mensaje de texto con ese mensaje" />
                     </a>
                 </div>
-                <Link onClick={() => setCart([])} to='/'>volver al inicio</Link>
+                <Link className='text-center' onClick={() => setCart([])} to='/'>volver al inicio</Link>
             </section>
         </main>
     )
