@@ -101,7 +101,7 @@ const CompleteBuy = () => {
                                 </div>
                                 <div className='input-group'>
                                     <input name='city' type="text" placeholder='Ciudad' className='completeBuy-input' />
-                                    <input name='province' type="tel" placeholder='Provincia' className='completeBuy-input' />
+                                    <input name='province' type="text" placeholder='Provincia' className='completeBuy-input' />
                                     <input name='postalCode' type="number" placeholder='Codigo postal' className='completeBuy-input' />
                                     <input readOnly className='inactive' name='total' type="text" value={calculateTotal()} />
                                     <textarea readOnly className='inactive' name='cart' type="text"  value={cartToEmail} />
@@ -113,7 +113,7 @@ const CompleteBuy = () => {
                             }
                             <div className='delivery-container'>
                                 <img src={car} alt="Foto de auto que representa el envio a domicilio" />
-                                <p>Hacemos envíos a domicilio</p>
+                                <p>Hacemos envíos a domicilio.</p>
                             </div>
                             <div className='delivery-container'>
                                 <img src={fragance4} alt="Foto de auto que representa el envio a domicilio" />
@@ -121,7 +121,7 @@ const CompleteBuy = () => {
                             </div>
                             <div className='delivery-container'>
                                 <img src={smile} alt="Foto de auto que representa el envio a domicilio" />
-                                <p>Nos comprometemos a guardarte tu producto, asi que esperamos lo mismo de vos con la responsabilidad del pago</p>
+                                <p>Nos comprometemos a guardarte tu producto, asi que esperamos lo mismo de vos con la responsabilidad del pago.</p>
                             </div>
                         </div>
                         <aside className='completeBuy-account'>
