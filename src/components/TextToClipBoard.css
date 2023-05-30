@@ -1,0 +1,59 @@
+
+.mercadoPago-row{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    overflow: hidden;
+}
+
+.mercadoPago-row h4{
+    width: 30%;
+    text-transform: uppercase;
+}
+
+.mercadoPago-row span{
+    width: 60%;
+}
+
+.mercadoPago-info{
+    display: flex;
+    align-items: center;
+    width: 60%;
+    gap: 10px;
+}
+
+.mercadoPago-row button{
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.mercadoPago-row img{
+    width: var(--fontSizeChica);
+}
+
+.mercadoPago-overlay{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--colorSecundario);
+    color: var(--colorPrincipal);
+    width: 100%;
+    height: 100%;
+    transform: translateY(100%);
+    transition: .5s;
+    opacity: .8;
+}
+
+.mercadoPago-overlay__show{
+    transform: translateY(0%);
+    transition: .5s;
+}

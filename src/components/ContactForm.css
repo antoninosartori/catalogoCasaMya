@@ -17,6 +17,10 @@
     box-shadow: 13px 13px 20px #e2e2e2, -13px -13px 20px #fff;
 }
 
+.contactForm h3{
+    padding-top: 20px;
+}
+
 .contactForm-input{
     resize: none;
     width: 90%;

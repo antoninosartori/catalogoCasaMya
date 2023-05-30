@@ -11,6 +11,7 @@ import { appContext } from './context/appContext'
 // paginas
 import HomePage from './pages/HomePage'
 import Checkout from './pages/Checkout'
+import CompleteBuy from './pages/CompleteBuy'
 
 
 function App() {
@@ -36,11 +37,12 @@ function App() {
 
   return (
     <>
-      < Header />
+      {/* < Header /> */}
 
       <Routes>
         < Route path='/' element={ < HomePage /> } />
         < Route path='/checkout' element={ < Checkout /> } />
+        < Route path='/buy' element={ < CompleteBuy /> } />
       </Routes>
 
       < Footer />

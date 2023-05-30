@@ -1,6 +1,3 @@
-.checkout-container{
-}
-
 .checkout-container h2{
     text-transform: uppercase;
     font-weight: 400;
@@ -40,8 +37,13 @@
     display: none;
 }
 
+.checkout-cart .card-footer .card-price{
+    font-size: var(--fontSizeChica);
+}
+
 .checkout-cart .card-footer .cart-product__deleteImg{
-    width: 20px;
+    width: auto;
+    height: 16px;
 }
 
 .checkout-payment h4{
@@ -70,7 +72,6 @@
 .footspring-number{
     width: 30px;
     height: 30px;
-    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -85,6 +86,16 @@
     line-height: 20px;
     font-weight: 400;
     text-align: left;
+}
+
+.total-cart{
+    text-transform: uppercase;
+    font-weight: 400;
+
+}
+
+.total-cart span{
+    font-weight: 700;
 }
 
 .payment-buttons{
@@ -104,11 +115,17 @@
 }
 
 @media screen and (max-width: 768px){
+    .checkout-container h2{
+        text-align: center;
+    }
     .checkout-section{
         flex-direction: column;
     }
     .checkout-cart, .checkout-payment{
         width: 100%;
+    }
+    .footspring-number{
+        margin: 0 auto;
     }
     .footspring-text{
         text-align: center;

@@ -1,0 +1,115 @@
+.completeBuy-container{}
+
+.completeBuy-container h2{
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.completeBuy-section{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.completeBuy-form, .completeBuy-account{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 20px;
+}
+
+.completeBuy-form{
+    width: 55%;
+}
+
+.completeBuy-form h3, .completeBuy-account h3{ 
+    font-size: var(--fontSizeChica);
+    font-weight: 100;
+    text-transform: uppercase;
+}
+
+.completeBuy-form__container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.input-group{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.completeBuy-input{
+    resize: none;
+    width: 90%;
+    border: 1px solid #8a8a8a;
+    padding: 15px;
+    border-radius: 30px;
+    font-family: var(--fontPrincipal);
+    font-size: var(--fontSizeChica);
+}
+
+.delivery-container{
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-start;
+}
+.delivery-container img{
+    width: var(--fontSizeNormal);
+    height: auto;
+    max-width: var(--fontSizeNormal);
+}
+.delivery-container p {
+    font-size: var(--fontSizeChica);
+}
+
+.completeBuy-button__container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.completeBuy-container form .contactForm-sendButton{
+    text-transform: uppercase;
+    font-size: var(--fontSizeNormal);
+    width: 200px;
+    font-weight: 400;    
+}
+
+.completeBuy-container form .completeBuy-button__container .goBackCart{
+    box-shadow: none;
+    font-size: var(--fontSizeChica);
+}
+
+/* .completeBuy-account{
+    width: 45%;
+} */
+
+/* .completeBuy-account h3{
+    text-align: right;
+} */
+
+.mercadoPago-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+}
+
+
+.completeBuy-account__totalContainer{}
+.completeBuy-account__totalContainer .total-cart{
+    font-size: var(--fontSizeNormal);
+    font-weight: 400;
+}
+
+.completeBuy-account__totalContainer .total-cart span{
+    font-weight: 700;
+}

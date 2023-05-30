@@ -25,6 +25,9 @@ const Card = ({ id, marca, nombre, foto, capacidad, precio, estado, desc, precio
     }
 
     const addToCart = () => {
+        if(!precioNum){
+            return
+        }
         const newProduct = {id, marca, nombre, foto, capacidad, precio: precioNum, estado, desc, precioSinDesc}
         const isOnCart = cart.some(product => product.id === id)
         if(isOnCart){ return }
@@ -68,7 +71,7 @@ const Card = ({ id, marca, nombre, foto, capacidad, precio, estado, desc, precio
                         <h6 className='card-discount__price'>{`$${precioSinDesc}`}</h6>
                     </div>
                 }
-                <h5 className='card-price'>{`$${precio}`}</h5>
+                <h5 className='card-price'>{`$${precioNum}`}</h5>
                 {/* <a className={whatsappLinkClassName} href={`https://wa.me/543446544456?text=${defaultMessage} ${marca} - ${nombre} x${capacidad}ml`} target='_blank' rel='noreferrer'>
                     <img className='whatsapp-image' src={whatsapp} alt="Enviar mensaje de texto con ese mensaje" />
                 </a> */}

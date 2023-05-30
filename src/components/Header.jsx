@@ -1,17 +1,19 @@
 import React, { useContext } from 'react'
 import './Header.css'
 import { appContext } from '../context/appContext'
-// assets
-import cartImg from '../assets/cart.svg'
-import Card from './Card'
 import { Link } from 'react-router-dom'
 
-const Header = () => {
-    const { search, setSearch, setTitle, filterSearch, resetSearch, cart , openCart, setOpenCart, calculateTotal} = useContext(appContext)
+// assets
+import cartImg from '../assets/cart.svg'
+// componentes
+import Card from './Card'
+
+const Header = ({ children, checkoutHeader }) => {
+    const { search, setSearch, setTitle, filterSearch, resetSearch, cart, openCart, setOpenCart, calculateTotal } = useContext(appContext)
 
     const onChangeSearch = (event) => {
         setOpenCart(false)
-        window.scrollTo( 0,0 )
+        window.scrollTo(0, 0)
         const value = event.target.value.toLowerCase()
         setSearch(value)
         filterSearch(value)
@@ -21,31 +23,31 @@ const Header = () => {
     let cartContainerClassName = openCart ? 'cart-products' : 'cart-products inactive'
 
     const handlCart = () => {
-        if(cart.length === 0 ) {
+        if (cart.length === 0) {
             return setOpenCart(false)
         }
         setOpenCart(!openCart)
     }
 
-    
-
-    return(
+    return (
         <header>
             <nav>
                 <h1>
-                    <Link onClick={() => {setOpenCart(false) ;scrollTo(0,0)}} to='/'>Casa Mya</Link>
+                    <Link onClick={() => { setOpenCart(false); scrollTo(0, 0) }} to='/'>Casa Mya</Link>
                 </h1>
                 <h2>articulos de limpieza - perfumería</h2>
-                <div className='header-row'>
-                    <form className='formSearch-header'>
-                        <input onChange={onChangeSearch} type="text" placeholder='buscar fragancia' value={search} />
-                        <button onClick={resetSearch} className='closeButton'>X</button>
-                    </form>
-                    <div className='cart-container'>
-                        <img onClick={handlCart} className='cartHeader-image' src={cartImg} alt="carrito de compras" />
-                        {cart.length > 0 && <div className='cart-amount' >{cart.length}</div> }
+                {!checkoutHeader &&
+                    <div className='header-row'>
+                        <form className='formSearch-header'>
+                            <input onChange={onChangeSearch} type="text" placeholder='buscar fragancia' value={search} />
+                            <button onClick={resetSearch} className='closeButton'>X</button>
+                        </form>
+                        <div className='cart-container'>
+                            <img onClick={handlCart} className='cartHeader-image' src={cartImg} alt="carrito de compras" />
+                            {cart.length > 0 && <div className='cart-amount' >{cart.length}</div>}
+                        </div>
                     </div>
-                </div>
+                }
             </nav>
             <aside className={cartContainerClassName}>
                 <h2>Mi compra</h2>

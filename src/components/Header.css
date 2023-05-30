@@ -40,6 +40,7 @@ header nav h2{
 .header-row{
     display: flex;
     width: 100%;
+    padding: 0 20px;
     justify-content: space-between;
 }
 
@@ -70,7 +71,9 @@ header nav h2{
     cursor: pointer;
     transition: .1s;
     /* padding: 4px 2px; */
-    padding: 6px 7px 3px 7px;
+    /* padding: 6px 7px 3px 7px; */
+    height: 26px;
+    width: 26px;
     border: 1px solid var(--colorSecundario);
     border-radius: 50%;
     background-color: var(--colorPrincipal);
@@ -203,8 +206,13 @@ header nav h2{
     margin-bottom: 20px;
 }
 
+.cart-products .cart-button{
+    text-transform: uppercase;
+}
+
 .cart-products .cart-cards .closeButton{
     position: unset;
+    padding: 5px;
 }
 
 @media screen and (max-width: 1200px){
@@ -221,5 +229,22 @@ header nav h2{
         width: 90%;
         transform: translateX(-5%);
     }
-    
+}
+
+@media screen and (max-width: 768px){
+    .cart-products{
+        width: 100%;
+        height: calc(100vh - 100px);
+        left: 0;
+        right: 0;
+        top: 101px;
+        transform: unset;
+        border-radius: 0;
+    }
+
+    .cart-cards .card-container{
+        width: 100%;
+        box-shadow: none;
+        margin: 0;
+    }
 }

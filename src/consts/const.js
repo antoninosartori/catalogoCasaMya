@@ -1,6 +1,7 @@
 //export const URL_API = 'https://sheet.best/api/sheets/4c6e4bf6-c0ef-4341-a895-90f7a0ca8e28/tabs/Catalogo'
 
 export const URL_API = 'https://api.steinhq.com/v1/storages/64727d17d27cdd09f0f6e219/Catalogo'
+
 export const brandsImages = [
   {
     name: 'Paco Rabanne',
@@ -31,4 +32,32 @@ export const brandsImages = [
     imagePath: 'https://drive.google.com/uc?export=view&id=1odCQ3XjTyFttz2aCK_PlkaapXR9ipNTc&rl'
   },
 
+]
+
+export const mercadoPagoInfo = [
+  {
+    title: 'razon social',
+    info: 'Antonino Nazareno Sartori'
+  },
+  {
+    title: 'cuil',
+    info: '20-39036305-3'
+  },
+  {
+    title: 'cvu',
+    info: '0000003100011281475322'
+  },
+  {
+    title: 'alias',
+    info: 'antonino.sartori.mp'
+  },
+  {
+    title: 'celular',
+    info: '3446544456'
+  },
+  {
+    title: 'email',
+    info: 'sartoriantonino@gmail.com'
+  }
+  
 ]
