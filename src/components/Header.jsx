@@ -57,7 +57,7 @@ const Header = ({ children, checkoutHeader }) => {
                     ))}
                     <h3 className='total-cart'>Total: ${calculateTotal()}</h3>
                     <Link onClick={() => setOpenCart(false)} to='/checkout' className='contactForm-sendButton cart-button'>iniciar compra</Link>
-                    <button onClick={() => setOpenCart(false)} className='closeButton'>cerrar</button>
+                    <button onClick={() => setOpenCart(false)} className='closeButton'>seguir comprando</button>
                 </div>
             </aside>
         </header>

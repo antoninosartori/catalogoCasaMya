@@ -18,7 +18,6 @@ const CompleteBuy = () => {
     const { cart, calculateTotal, error, setError } = useContext(appContext)
     const form = useRef();
     const [ isSuccess, setIsSuccess] = useState(false)
-    
 
     if (cart.length === 0) {
         return <Navigate to={"/"} />
@@ -122,7 +121,7 @@ const CompleteBuy = () => {
                             </div>
                             <div className='delivery-container'>
                                 <img src={smile} alt="Foto de auto que representa el envio a domicilio" />
-                                <p>Nosotros ponemos el compromiso de guardarte tu producto, asi que esperamos lo mismo de vos con la responsabilidad del pago</p>
+                                <p>Nos comprometemos a guardarte tu producto, asi que esperamos lo mismo de vos con la responsabilidad del pago</p>
                             </div>
                         </div>
                         <aside className='completeBuy-account'>

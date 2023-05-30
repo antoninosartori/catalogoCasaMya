@@ -48,5 +48,6 @@
 @media screen and (max-width: 992px) {
     .successfully-container .mercadoPago-container{
         width: 100%;
+        padding: 0px;
     }
 }
