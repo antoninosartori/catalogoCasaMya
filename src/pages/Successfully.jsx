@@ -57,10 +57,6 @@ const Successfully = () => {
 
                 <div className='checkout-payment__footer'>
                     <h3 className='total-cart'>Total a pagar: <span>${calculateTotal()}</span> </h3>
-                    <div className='payment-buttons'>
-                        <Link to='/' className='contactForm-sendButton goBackCart'>volver atras</Link>
-                        <Link to='/buy' className='contactForm-sendButton goOnButton'>continuar</Link>
-                    </div>
                 </div>
                 <p className='successfully-footer-text'>Recordá que te guardamos el stock por 24 horas</p>
                 <p className='successfully-footer-text'>Ponete en contacto con nosótros, podes hacerlo por cualquier medio</p>
