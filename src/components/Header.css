@@ -212,7 +212,18 @@ header nav h2{
 
 .cart-products .cart-cards .closeButton{
     position: unset;
-    padding: 5px;
+    width: max-content;
+    height: max-content;
+    padding: 5px 10px;
+    border: none;
+    font-family: var(--fontPrincipal);
+    text-transform: uppercase;
+}
+
+.cart-products .cart-cards .closeButton:hover{
+    background-color: transparent;
+    color: var(--colorSecundario);
+    opacity: .8;
 }
 
 @media screen and (max-width: 1200px){

@@ -52,6 +52,11 @@
     font-size: var(--fontSizeChica);
 }
 
+.completeBuy-form .messageStatus{
+    color: red;
+    text-align: center;
+}
+
 .delivery-container{
     width: 100%;
     display: flex;
@@ -76,16 +81,17 @@
     padding-top: 20px;
 }
 
-.completeBuy-container form .contactForm-sendButton{
+.completeBuy-container .completeBuy-account .contactForm-sendButton{
     text-transform: uppercase;
     font-size: var(--fontSizeNormal);
     width: 200px;
     font-weight: 400;    
 }
 
-.completeBuy-container form .completeBuy-button__container .goBackCart{
+.completeBuy-container .completeBuy-account .completeBuy-button__container .goBackCart{
     box-shadow: none;
     font-size: var(--fontSizeChica);
+    text-transform: uppercase;
 }
 
 /* .completeBuy-account{
@@ -112,4 +118,19 @@
 
 .completeBuy-account__totalContainer .total-cart span{
     font-weight: 700;
+}
+
+@media screen and (max-width: 768px){
+    .completeBuy-form{
+        width: 100%;
+    }
+    .completeBuy-account{
+        padding-top: 20px;
+    }
+    .completeBuy-section{
+        flex-direction: column;
+    }
+    .completeBuy-button__container{
+        justify-content: flex-start;
+    }
 }

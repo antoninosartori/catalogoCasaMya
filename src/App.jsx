@@ -12,6 +12,7 @@ import { appContext } from './context/appContext'
 import HomePage from './pages/HomePage'
 import Checkout from './pages/Checkout'
 import CompleteBuy from './pages/CompleteBuy'
+import Successfully from './pages/Successfully'
 
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
         < Route path='/' element={ < HomePage /> } />
         < Route path='/checkout' element={ < Checkout /> } />
         < Route path='/buy' element={ < CompleteBuy /> } />
+        < Route path='/successfully' element={ < Successfully /> } />
       </Routes>
 
       < Footer />

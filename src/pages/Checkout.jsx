@@ -6,7 +6,8 @@ import Card from '../components/Card'
 import Header from '../components/Header'
 
 const Checkout = () => {
-    const { cart, setCart, calculateTotal } = useContext(appContext)
+    window.scrollTo(0,0)
+    const { cart, calculateTotal } = useContext(appContext)
     if (cart.length === 0) {
         return <Navigate to={"/"} />
     }

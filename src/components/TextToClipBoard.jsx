@@ -4,7 +4,8 @@ import copy from '../assets/copy.svg'
 
 const TextToClipBoard = ({ textToTitle, textToCopy }) => {
     const [ isCopied, setIsCopied] = useState(false)
-    const handleCopyClick = () => {
+    const handleCopyClick = (event) => {
+        event.preventDefault()
         navigator.clipboard.writeText(textToCopy);
         setIsCopied(true)
         setTimeout(() => { setIsCopied(false) }, 500)

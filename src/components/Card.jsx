@@ -7,8 +7,8 @@ import addCartImg from '../assets/cart.svg'
 import deleteImg from '../assets/delete.svg'
 import { appContext } from '../context/appContext'
 
-const Card = ({ id, marca, nombre, foto, capacidad, precio, estado, desc, precioSinDesc, isInCart }) => {
-    const { cart, setCart, setOpenCart, calculateTotal } = useContext(appContext)
+const Card = ({ id, marca, nombre, foto, capacidad, precio, estado, desc, precioSinDesc, isInCart, genero }) => {
+    const { cart, setCart, setOpenCart } = useContext(appContext)
     const [ whatsappLinkClassName, setWhatsappLinkClassName] = useState('cart-image cart-image__inactive')
     const [ isImageLoaded, setIsImageLoaded] = useState(false)
     const classNameImage = isImageLoaded ? 'card-image' : 'inactive'
@@ -28,7 +28,7 @@ const Card = ({ id, marca, nombre, foto, capacidad, precio, estado, desc, precio
         if(!precioNum){
             return
         }
-        const newProduct = {id, marca, nombre, foto, capacidad, precio: precioNum, estado, desc, precioSinDesc}
+        const newProduct = {id, marca, nombre, foto, capacidad, precio: precioNum, estado, desc, precioSinDesc, genero}
         const isOnCart = cart.some(product => product.id === id)
         if(isOnCart){ return }
         const newCart = [...cart, newProduct]

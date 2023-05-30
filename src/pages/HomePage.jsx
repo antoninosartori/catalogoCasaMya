@@ -19,6 +19,7 @@ import { appContext } from '../context/appContext'
 import Header from '../components/Header'
 
 function HomePage() {
+  window.scrollTo(0,0)
   const { fragances, filteredFragances, setFilteredFragances, setSearch, title, setTitle, filterSearch, resetSearch, isLoading, error } = useContext(appContext)
 
 
@@ -91,7 +92,7 @@ function HomePage() {
             }
             {filteredFragances &&
               filteredFragances.map(fragance => (
-                < Card key={fragance.id} id={fragance.id} marca={fragance.marca} nombre={fragance.nombre} foto={fragance.foto} capacidad={fragance.capacidad} precio={fragance.precio} estado={fragance.estado} precioSinDesc={fragance.precioSinDesc} desc={fragance.desc} />
+                < Card key={fragance.id} id={fragance.id} marca={fragance.marca} nombre={fragance.nombre} foto={fragance.foto} capacidad={fragance.capacidad} precio={fragance.precio} estado={fragance.estado} precioSinDesc={fragance.precioSinDesc} desc={fragance.desc} genero={fragance.genero} />
               ))
             }
           </div>
