@@ -45,11 +45,13 @@ export const mercadoPagoInfo = [
   },
   {
     title: 'cvu',
-    info: '0000003100011281475322'
+    info: '0000003100011281475322',
+    isCopiable: true
   },
   {
     title: 'alias',
-    info: 'antonino.sartori.mp'
+    info: 'antonino.sartori.mp',
+    isCopiable: true
   },
   {
     title: 'celular',

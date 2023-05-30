@@ -15,8 +15,9 @@ import TextToClipBoard from '../components/TextToClipBoard'
 
 const CompleteBuy = () => {
     window.scrollTo(0,0)
-    const { cart, calculateTotal, error, setError } = useContext(appContext)
+    const { cart, calculateTotal} = useContext(appContext)
     const form = useRef();
+    const [ error, setError ] = useState(false)
     const [ isSuccess, setIsSuccess] = useState(false)
 
     if (cart.length === 0) {
@@ -113,7 +114,7 @@ const CompleteBuy = () => {
                             }
                             <div className='delivery-container'>
                                 <img src={car} alt="Foto de auto que representa el envio a domicilio" />
-                                <p>Hacemos envíos a domicilio.</p>
+                                <p>Envíos a todo el país</p>
                             </div>
                             <div className='delivery-container'>
                                 <img src={fragance4} alt="Foto de auto que representa el envio a domicilio" />
@@ -129,7 +130,7 @@ const CompleteBuy = () => {
                             <article className='mercadoPago-container'>
                                 {
                                     mercadoPagoInfo.map(item => (
-                                        < TextToClipBoard key={item.title} textToTitle={item.title} textToCopy={item.info} />
+                                        < TextToClipBoard key={item.title} textToTitle={item.title} textToCopy={item.info} isCopiable={item.isCopiable} />
                                     ))
                                 }
                             </article>

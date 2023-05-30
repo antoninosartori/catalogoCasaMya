@@ -2,7 +2,6 @@ import { useContext, useEffect } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
 // componentes
-import Header from './components/Header'
 import Footer from './components/Footer'
 // constantes
 import { URL_API } from './consts/const'
@@ -46,6 +45,7 @@ function App() {
         < Route path='/buy' element={ < CompleteBuy /> } />
         < Route path='/successfully' element={ < Successfully /> } />
       </Routes>
+
 
       < Footer />
     </>

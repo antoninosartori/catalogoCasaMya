@@ -3,7 +3,10 @@ import './Card.css'
 import ImagePlaceholder from './ImagePlaceholder'
 
 // import whatsapp from '../assets/whatsapp.svg'
-import addCartImg from '../assets/cart.svg'
+//import addCartImg from '../assets/cart.svg'
+import cartEmptyImg from '../assets/cartEmpty.svg'
+import cartFullImg from '../assets/cartBlack.svg'
+
 import deleteImg from '../assets/delete.svg'
 import { appContext } from '../context/appContext'
 
@@ -13,8 +16,9 @@ const Card = ({ id, marca, nombre, foto, capacidad, precio, estado, desc, precio
     const [ isImageLoaded, setIsImageLoaded] = useState(false)
     const classNameImage = isImageLoaded ? 'card-image' : 'inactive'
    // const defaultMessage = 'Hola, estoy interesado en el producto'
-
     const precioNum = Number(precio)
+    const isOnCart = cart.some(product => product.id === id)
+    const showCart = isOnCart ? cartFullImg : cartEmptyImg
 
     const cardHover = () => {
         setWhatsappLinkClassName('cart-image')
@@ -28,16 +32,16 @@ const Card = ({ id, marca, nombre, foto, capacidad, precio, estado, desc, precio
         if(!precioNum){
             return
         }
+        if(isOnCart) {return}
+        
         const newProduct = {id, marca, nombre, foto, capacidad, precio: precioNum, estado, desc, precioSinDesc, genero}
-        const isOnCart = cart.some(product => product.id === id)
-        if(isOnCart){ return }
+        //const isOnCart = cart.some(product => product.id === id)
         const newCart = [...cart, newProduct]
         setCart(newCart)
         setOpenCart(true)
     }
 
     const removeFromCart = () => {
-        
         const filter = cart.filter(product => product.id !== id )
         setCart(filter)
         if(filter.length === 0){
@@ -77,7 +81,7 @@ const Card = ({ id, marca, nombre, foto, capacidad, precio, estado, desc, precio
                 </a> */}
                 {!isInCart
                     ? <a className={whatsappLinkClassName} >
-                        <img onClick={addToCart} className='whatsapp-image' src={addCartImg} alt="Enviar mensaje de texto con ese mensaje" />
+                        <img onClick={addToCart} className='whatsapp-image' src={showCart} alt="Enviar mensaje de texto con ese mensaje" />
                     </a>
                     :
                     <img onClick={removeFromCart} className='cart-product__deleteImg' src={deleteImg} alt="Eliminar producto del carrito" />
