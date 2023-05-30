@@ -24,17 +24,50 @@
     font-weight: 700;
 }
 
-.successfully-container p{
-    font-size: var(--fontSizeChica);
-    font-weight: 400;
-    text-align: center;
+.successfully-payment{
+    display: flex;
+    width: 50%;
+    flex-direction: column;
 }
 
+.successfully-paymentContainer{
+    width: 100%;
+    display: flex;
+    padding-top: 20px;
+}
+
+
 .successfully-container .mercadoPago-container{
-    width: 50%;
-    padding: 20px;
-    border-bottom: 1px solid gray;
-    border-top: 1px solid gray;
+    width: 100%;
+    padding-top: 20px;
+}
+
+.successfully-container .title-article{
+    font-size: var(--fontSizeChica);
+    font-weight: 100;
+    text-align: left;
+}
+
+.successfully-paymentContainer .payment-footsprings{
+    padding: 0;
+}
+
+.successfully-paymentContainer .payment-footsprings .footspring-group{
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.successfully-paymentContainer .payment-footsprings .footspring-group .footspring-text{
+    text-align: left;
+}
+
+.checkout-payment__footer{
+    padding-top: 20px;
+}
+
+.checkout-payment__footer .payment-buttons .goOnButton{
+    font-weight: 700;
 }
 
 .successfully-container a {
@@ -45,9 +78,32 @@
     opacity:.8;
 }
 
+.successfully-footer-text{
+    text-align: center;
+}
+
 @media screen and (max-width: 992px) {
-    .successfully-container .mercadoPago-container{
+    .successfully-paymentContainer{
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .successfully-paymentContainer .successfully-payment{
         width: 100%;
-        padding: 0px;
+    }
+    .successfully-paymentContainer .payment-footsprings{
+        width: 100%;
+    }
+    .successfully-paymentContainer .payment-footsprings .footspring-group .footspring-number{
+        margin: unset;
+    }
+}
+
+@media screen and (max-width:576px) {
+    .successfully-paymentContainer .payment-footsprings .footspring-group{
+        flex-direction: column;
+    }
+    .successfully-paymentContainer .payment-footsprings .footspring-group .footspring-text{
+        text-align: center;
     }
 }
