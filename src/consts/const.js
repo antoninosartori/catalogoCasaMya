@@ -20,8 +20,8 @@ export const brandsImages = [
     imagePath: 'https://drive.google.com/uc?export=view&id=1GVyaR5xaFfQsoE1CVyQWMlUmI1PzXlTE&rl'
   },
   {
-    name: 'Paula Cahen',
-    imagePath: 'https://drive.google.com/uc?export=view&id=1M0r-PE6kmgWLrPh28jKgb5iGFkXkie25&rl'
+    name: 'Agatha Ruiz',
+    imagePath: 'https://drive.google.com/uc?export=view&id=1FRvqFJq4gmMfPpSPg-YF73i86Yl6DjrD&rl'
   },
   {
     name: 'Kevin',

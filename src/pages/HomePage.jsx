@@ -74,7 +74,9 @@ function HomePage() {
               <img onLoad={() => { setIsBrandImageLoaded(true) }} onClick={chooseBrand} className={classNameBrandImage} key={brand.name} src={brand.imagePath} alt={brand.name} value={brand.name} />
             ))}
           </div>
+          
           <h3>{title}</h3>
+        
           <div className='content-group'>
             {isLoading &&
               <div className='loading-container'>
