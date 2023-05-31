@@ -6,8 +6,8 @@ import GridCards from '../components/GridCards'
 import GoUpArrow from '../components/GoUpArrow'
 import ContactForm from '../components/ContactForm'
 //assets
-import smile from '../assets/smile.svg'
-import whatsapp from '../assets/whatsapp.svg'
+import smile2 from '../assets/smile2.svg'
+import whatsappBlack from '../assets/whatsappBlack.svg'
 import truck from '../assets/truck.svg'
 import dollarup from '../assets/dollarup.svg'
 import wallet from '../assets/wallet.svg'
@@ -16,7 +16,7 @@ import world from '../assets/world.svg'
 const orderText = [
     {
         text:'Estos productos no los tenemos en el momento, son para encargar.',
-        img: smile,
+        img: smile2,
     },
     {
         text:'Las fragancias son importadas, originales. Vienen en su caja cerrada y sellada por la AFIP',
@@ -32,7 +32,7 @@ const orderText = [
     },
     {
         text:'Recomendamos que te pongas en contacto con nosotros antes o luego de encargar un producto',
-        img: whatsapp,
+        img: whatsappBlack,
     },
     {
         text:'Los precios son estimativos, ya que estan sujetos al precio del dólar',
