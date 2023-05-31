@@ -46,7 +46,7 @@ function App() {
         < Route path='/checkout' element={ < Checkout /> } />
         < Route path='/buy' element={ < CompleteBuy /> } />
         < Route path='/successfully' element={ < Successfully /> } />
-        {/* < Route path='/encargar' element={ < Order /> } /> */}
+        < Route path='/encargar' element={ < Order /> } />
       </Routes>
 
 

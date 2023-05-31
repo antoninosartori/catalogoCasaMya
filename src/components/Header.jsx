@@ -9,12 +9,17 @@ import cartImg from '../assets/cart.svg'
 import Card from './Card'
 
 const Header = ({ children, checkoutHeader }) => {
-    const { search, setSearch, setTitle, filterSearch, resetSearch, cart, openCart, setOpenCart, calculateTotal } = useContext(appContext)
+    const { search, setSearch, setTitle, filterSearch, resetSearch, cart, openCart, setOpenCart, calculateTotal, setFilteredFragances,fragances } = useContext(appContext)
 
     const onChangeSearch = (event) => {
         setOpenCart(false)
         window.scrollTo(0, 0)
-        const value = event.target.value.toLowerCase()
+        let value = event.target.value.toLowerCase()
+        if(value === '') {
+            setFilteredFragances(fragances.filter(prod => !prod.esEncargable))
+            setSearch(value)
+            return 
+        }
         setSearch(value)
         filterSearch(value)
         setTitle(value === '' ? 'Catálogo' : 'Resultados de la búsqueda')
@@ -33,7 +38,7 @@ const Header = ({ children, checkoutHeader }) => {
         <header>
             <nav>
                 <h1>
-                    <Link onClick={() => { setOpenCart(false); scrollTo(0, 0) }} to='/'>Casa Mya</Link>
+                    <Link onClick={() => { setOpenCart(false); scrollTo(0, 0); setTitle('Catálogo'); setFilteredFragances(fragances.filter(prod => !prod.esEncargable))}} to='/'>Casa Mya</Link>
                 </h1>
                 <h2>articulos de limpieza - perfumería</h2>
                 {!checkoutHeader &&

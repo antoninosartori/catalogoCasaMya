@@ -12,14 +12,19 @@ const StateContextApp = ({children}) => {
     const [error, setError] = useState('')
 
     const filterSearch = (searchValue) => {
+        /* if(searchValue === '') {
+            setFilteredFragances(fragances.filter(prod => !prod.esEncargable))
+        } */
         const filter = fragances.filter(fragance => fragance.nombre.includes(searchValue) || fragance.marca.includes(searchValue) || fragance.genero.includes(searchValue))
-        if(filter.length === 0){ setTitle(`No se han encontrado productos`) }
+        if(filter.length === 0){ 
+            setTitle(`No se han encontrado productos`) 
+        }
         setFilteredFragances(filter)
     }
 
     const resetSearch = (event) => {
         event.preventDefault()
-        setFilteredFragances(fragances)
+        setFilteredFragances(fragances.filter(prod => !prod.esEncargable))
         setSearch('')
         setTitle('Catálogo')
     }
@@ -32,7 +37,26 @@ const StateContextApp = ({children}) => {
 
     return(
         <appContext.Provider
-            value={{fragances, setFragances, filteredFragances, setFilteredFragances, search, setSearch, title, setTitle, filterSearch, resetSearch, cart, setCart, openCart, setOpenCart, isLoading, setIsLoading, error, setError, calculateTotal}}
+            value={{
+                fragances, 
+                setFragances, 
+                filteredFragances, 
+                setFilteredFragances, 
+                search, 
+                setSearch, 
+                title, 
+                setTitle, 
+                filterSearch, 
+                resetSearch, 
+                cart, 
+                setCart, 
+                openCart, 
+                setOpenCart, 
+                isLoading, 
+                setIsLoading, 
+                error, 
+                setError, 
+                calculateTotal}}
         >
             {children}
         </appContext.Provider>

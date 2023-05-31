@@ -17,13 +17,12 @@ import GridCards from '../components/GridCards'
 function HomePage() {
   window.scrollTo(0,0)
   const {filteredFragances, title, error} = useContext(appContext)
-
   return (
     <>
       < Header />
       
       <main>
-        < SearchBrand /* toOrderButton */ />
+        < SearchBrand toOrderButton />
 
         <section className='content-container'>
           {error && <h2>Lo siento, ha ocurrido un error, intente nuevamente</h2>}

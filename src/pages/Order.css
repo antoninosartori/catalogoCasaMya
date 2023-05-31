@@ -4,7 +4,17 @@
 .orderText-article{
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 30px;
+}
+
+.order-textContainer{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.order-img{
+    width: var(--fontSizeGrande);
 }
 
 .order-text{

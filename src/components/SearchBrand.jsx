@@ -36,7 +36,7 @@ const SearchBrand = ({ toOrderButton }) => {
         <section className='formSearch-container'>
             {toOrderButton &&
                 <div className='order-container'>
-                    <Link className='contactForm-sendButton' to='/encargar'>quiero encargar</Link>
+                    <Link className='contactForm-sendButton' to='/encargar'>para encargar</Link>
                 </div>
             }
             <form>
