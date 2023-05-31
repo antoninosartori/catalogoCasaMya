@@ -1,0 +1,14 @@
+.orderText-container{
+}
+
+.orderText-article{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.order-text{
+    font-size: var(--fontSizeChica);
+    text-transform: uppercase;
+}
+

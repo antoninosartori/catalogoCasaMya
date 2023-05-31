@@ -1,0 +1,37 @@
+.content-group{
+    max-width: 992px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.loading-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading-container svg{
+    width: 300px;
+}
+
+.loading-cardsGroup{
+    max-width: 992px;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 980px){
+    .content-group{
+        justify-content: center;
+        gap: 20px;
+    }
+    .loading-cardsGroup{
+        justify-content: center;
+    }
+}

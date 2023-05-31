@@ -1,0 +1,102 @@
+.formSearch-container{
+    width: 100%;
+}
+
+.order-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.order-container .contactForm-sendButton{
+    text-transform: uppercase;
+}
+
+.filters-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.filter-button{
+    background-color: transparent;
+    color: var(--colorSecundario);
+    outline: none;
+    border: none;
+    font-family: var(--fontPrincipal);
+    font-size: var(--fontSizeChica);
+    cursor: pointer;
+    transition: .3s;
+}
+
+.filter-button:hover{
+    opacity: .7;
+    transition: .3s;
+}
+
+.brands-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    padding-top: 20px;
+}
+
+.brand-image{
+    width: 100px;
+    aspect-ratio: 3/2;
+    object-fit: contain;
+    cursor: pointer;
+    filter: grayscale(100%);
+}
+
+.allBrandsHTML-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    padding: 10px;
+    border: 1px solid var(--colorSecundario);
+    border-radius: 50px 10px 50px 10px;
+    -moz-border-radius: 50px 10px 50px 10px;
+    -webkit-border-radius: 50px 10px 50px 10px;
+    cursor: pointer;
+}
+
+.allBrandsHTML-container:hover{
+    background-color: var(--colorSecundario);
+    color: var(--colorPrincipal);
+}
+
+.allBrandsHTML-container p{
+    text-align: center;
+}
+
+.brand-image:hover{
+    filter: grayscale(0%)
+}
+
+.brands-container{
+    padding-bottom: 20px;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.brands-container::-webkit-scrollbar{
+    background-color:transparent;
+    height: 3px;
+
+}
+.brands-container::-webkit-scrollbar-thumb{
+    border-radius: 50px;
+    background-color: var(--colorSecundario);
+}
+
+.allBrandsHTML-container{
+    border-radius: 30px 10px 30px 10px;
+    -moz-border-radius: 30px 10px 30px 10px;
+    -webkit-border-radius: 30px 10px 30px 10px;
+}

@@ -12,10 +12,11 @@ import HomePage from './pages/HomePage'
 import Checkout from './pages/Checkout'
 import CompleteBuy from './pages/CompleteBuy'
 import Successfully from './pages/Successfully'
+import Order from './pages/Order'
 
 
 function App() {
-  const {  setFragances, setFilteredFragances, setIsLoading, setError } = useContext(appContext)
+  const { setFragances, setFilteredFragances, setIsLoading, setError } = useContext(appContext)
 
   useEffect(() => {
     // fetch
@@ -24,7 +25,8 @@ function App() {
       .then((response) => response.json())
       .then((data) => {
         const sortedData = data.sort((a,b) => b.precio - a.precio)
-        setFilteredFragances(sortedData);
+        const normalFragances = sortedData.filter(prod => !prod.esEncargable)
+        setFilteredFragances(normalFragances);
         setFragances(sortedData);
         setIsLoading(false)
       })
@@ -44,6 +46,7 @@ function App() {
         < Route path='/checkout' element={ < Checkout /> } />
         < Route path='/buy' element={ < CompleteBuy /> } />
         < Route path='/successfully' element={ < Successfully /> } />
+        {/* < Route path='/encargar' element={ < Order /> } /> */}
       </Routes>
 
 
