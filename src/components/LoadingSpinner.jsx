@@ -1,12 +1,12 @@
 import React from 'react'
 import './LoadingSpinner.css'
 
-const LoadingSpinner = () => {
+const LoadingSpinner = ({withoutText}) => {
     return(
         <>
             <div className='spinner-container'>
                 <div className="spinner"></div>
-                <h2>cargando</h2>
+                {!withoutText && <h2>cargando</h2>}
             </div>
         </>
     )

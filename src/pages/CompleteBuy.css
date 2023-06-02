@@ -52,6 +52,16 @@
     font-size: var(--fontSizeChica);
 }
 
+[name~="cellphone"] {
+    width: 40%;
+}
+[name~="city"] {
+    width: 40%;
+}
+[name~="postalCode"] {
+    width: 40%;
+}
+
 .completeBuy-form .messageStatus{
     color: red;
     text-align: center;

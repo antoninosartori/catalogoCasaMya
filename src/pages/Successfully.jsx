@@ -7,6 +7,7 @@ import smile from '../assets/smile.svg'
 import whatsapp from '../assets/whatsapp.svg'
 import { mercadoPagoInfo } from '../consts/const'
 import TextToClipBoard from '../components/TextToClipBoard'
+import Header from '../components/Header'
 const Successfully = () => {
     window.scrollTo(0, 0)
     const { cart, calculateTotal, setCart } = useContext(appContext)
@@ -18,6 +19,7 @@ const Successfully = () => {
     const whatsappMessage = 'Hola, he hecho un pedido desde el catálogo'
     return (
         <main>
+            < Header checkoutHeader/>
             <section className='successfully-container'>
                 <img className='smile' src={smile} alt="carita sonriente" />
                 <h2>Gracias</h2>

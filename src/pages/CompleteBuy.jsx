@@ -2,6 +2,7 @@ import React, { useContext, useRef, useState } from 'react'
 import './CompleteBuy.css'
 import emailjs from '@emailjs/browser';
 import Header from '../components/Header'
+import LoadingSpinner from '../components/LoadingSpinner'
 import { appContext } from '../context/appContext'
 import { Link, Navigate } from 'react-router-dom'
 // assets
@@ -19,6 +20,7 @@ const CompleteBuy = () => {
     const form = useRef();
     const [ error, setError ] = useState(false)
     const [ isSuccess, setIsSuccess] = useState(false)
+    const [ isLoading, setIsLoading] = useState(false)
 
     if (cart.length === 0) {
         return <Navigate to={"/"} />
@@ -37,6 +39,7 @@ const CompleteBuy = () => {
         const email = form.current.email.value
         const cellphone = form.current.cellphone.value
         const city = form.current.city.value
+        const adress = form.current.adress.value
         const province = form.current.province.value
         const postalCode = form.current.postalCode.value
         
@@ -68,19 +71,25 @@ const CompleteBuy = () => {
             setError('por favor, escribe tu código postal')
             return 
         }
-        
+        if( !adress) {
+            setError('por favor, escribe tu domicilio')
+            return
+        }
+        setIsLoading(true)
         emailjs.sendForm('service_rqdt8w9', 'template_eadd28u', form.current, '1BLpRCJNGW4edyOyK')
           .then((result) => {
               console.log(result.text);
+              setIsLoading(false)
               setIsSuccess(true)
+              
           }, (error) => {
+                setIsLoading(false)
               console.log(error.text);
               console.log('lo siento, no pudimos enviar su mensaje')
           });
       };
 
       const cartToEmail = cart.map(product => {return `${product.marca.toUpperCase()} - ${product.nombre} ${product.capacidad} - ${product.genero} => $${product.precio}` })
-      console.log(cartToEmail)
 
     return (
         <>
@@ -98,15 +107,18 @@ const CompleteBuy = () => {
                                 </div>
                                 <div className='input-group'>
                                     <input name='email' type="email" placeholder='Email' className='completeBuy-input' />
-                                    <input name='cellphone' type="tel" placeholder='Celular' className='completeBuy-input' />
+                                    <input name='cellphone' type="number" placeholder='Celular' className='completeBuy-input' />
                                 </div>
                                 <div className='input-group'>
                                     <input name='city' type="text" placeholder='Ciudad' className='completeBuy-input' />
+                                    <input name='adress' type="text" placeholder='Domicilio' className='completeBuy-input' />
+                                </div>
+                                <div className='input-group'>
                                     <input name='province' type="text" placeholder='Provincia' className='completeBuy-input' />
-                                    <input name='postalCode' type="number" placeholder='Codigo postal' className='completeBuy-input' />
+                                    <input name='postalCode' type="number" placeholder='CP' className='completeBuy-input' />
+                                </div>
                                     <input readOnly className='inactive' name='total' type="text" value={calculateTotal()} />
                                     <textarea readOnly className='inactive' name='cart' type="text"  value={cartToEmail} />
-                                </div>
                             </div>
                             {
                                 error && 
@@ -139,7 +151,7 @@ const CompleteBuy = () => {
                             </div>
                             <div className='completeBuy-button__container'>
                                 <Link className='contactForm-sendButton goBackCart' to='/checkout'> volver atras </Link>
-                                <button className='completeBuy-button contactForm-sendButton'>comprar</button>
+                                <button disabled={isLoading} className='completeBuy-button contactForm-sendButton'>{ isLoading ? < LoadingSpinner withoutText /> : 'comprar' }</button>
                             </div>
                         </aside>
                     </form>

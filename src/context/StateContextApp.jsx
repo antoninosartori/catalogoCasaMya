@@ -32,7 +32,7 @@ const StateContextApp = ({children}) => {
     const calculateTotal = () => {
         const totalPrice = cart.reduce((total, item) => total + Number(item.precio), 0);
         /* return totalPrice.toFixed(2) */ // Redondear a 2 decimales si es necesario
-        return totalPrice
+        return totalPrice.toLocaleString()
       };
 
     return(
