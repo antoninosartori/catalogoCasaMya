@@ -12,14 +12,15 @@ const SearchBrand = ({ toOrderButton }) => {
 
     const handleAllFragance = (event) => {
         event.preventDefault()
-        setFilteredFragances(fragances)
+        const filter = fragances.filter(fragances => !fragances.esEncargable)
+        setFilteredFragances(filter)
         setTitle('Catálogo')
     }
 
     const handleChangeFragance = (event) => {
         event.preventDefault()
         const genre = event.target.value
-        const filter = fragances.filter(fragance => fragance.genero === genre)
+        const filter = fragances.filter(fragance => fragance.genero === genre && !fragance.esEncargable)
         setFilteredFragances(filter)
         setTitle(`Fragancias de ${genre}`)
     }
