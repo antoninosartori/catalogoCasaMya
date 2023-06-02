@@ -46,6 +46,10 @@ const Checkout = () => {
                                     <span className='footspring-number'>5</span>
                                     <p className='footspring-text'>Realizá el deposito, <em>enviá</em> el comprobante al <em>teléfono o email</em>, o ponete en contacto vía <em>Whatsapp</em></p>
                                 </div>
+                                <div className='footspring-group'>
+                                    <span className='footspring-number'>❗</span>
+                                    <p className='footspring-text'>Si el producto es para <em>encargar</em> te recomendamos que no deposites y te pongas en contacto con nosotros primero</p>
+                                </div>
                             </div>
                             <div className='checkout-payment__footer'>
                                 <h3 className='total-cart'>Total a pagar: <span>${calculateTotal()}</span> </h3>

@@ -54,6 +54,10 @@ const Successfully = () => {
                             <span className='footspring-number'>💡</span>
                             <p className='footspring-text'>Usando Mercado Pago podés pagar en cuotas.</p>
                         </div>
+                        <div className='footspring-group'>
+                            <span className='footspring-number'>❗</span>
+                            <p className='footspring-text'>Si el producto es para <em>encargue</em> te recomendamos no depositar. Ponete en contacto con nosotros primero.</p>
+                        </div>
                     </div>
                 </div>
 

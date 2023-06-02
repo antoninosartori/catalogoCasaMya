@@ -51,7 +51,8 @@ const Card = ({ id, marca, nombre, foto, capacidad, precio, estado, desc, precio
         }
     }
 
-    const cardStatusClassName = estado === 'agotado' ? 'card-status card-status__unavailable' : 'card-status'
+    const cardStatusClassName = estado === 'agotado' || estado === 'encargalo' ? 'card-status card-status__unavailable' : 'card-status'
+    
 
     return (
         <article onMouseOver={cardHover} onMouseOut={cardMouseOut} className='card-container' key={id}>
