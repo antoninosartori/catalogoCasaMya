@@ -34,10 +34,10 @@ const orderText = [
         text:'Recomendamos que te pongas en contacto con nosotros antes o luego de encargar un producto',
         img: whatsappBlack,
     },
-    {
+    /* {
         text:'Los precios son estimativos, ya que estan sujetos al precio del dólar',
         img: dollarup,
-    },
+    }, */
 ]
 
 const Order = () => {
