@@ -14,10 +14,14 @@ export const brandsImages = [
 /*   {
     name: 'Chester Ice',
     imagePath: 'https://drive.google.com/uc?export=view&id=1XuF7iyPc4N2_jO0JlHUVdv0YyE_XADXs&rl'
-  }, */
+  },   */
   {
     name: 'Ciel',
     imagePath: 'https://drive.google.com/uc?export=view&id=1GVyaR5xaFfQsoE1CVyQWMlUmI1PzXlTE&rl'
+  },
+  {
+    name: 'Carolina Herrera',
+    imagePath: 'https://drive.google.com/uc?export=view&id=1PsPg6QCtDzB7UPL35X0OqoMPjusiod6n&rl'
   },
   {
     name: 'Agatha Ruiz',
@@ -27,11 +31,11 @@ export const brandsImages = [
     name: 'Kevin',
     imagePath: 'https://cdn.batitienda.com/baticloud/images/brand_ce813ec668d64eb49efb95306d6b8b2a_637437997968733165_0_m.webp'
   },
-  {
+  /* {
     name: 'Soul Essences',
     imagePath: 'https://drive.google.com/uc?export=view&id=1odCQ3XjTyFttz2aCK_PlkaapXR9ipNTc&rl'
   },
-
+ */
 ]
 
 export const mercadoPagoInfo = [

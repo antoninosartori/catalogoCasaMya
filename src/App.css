@@ -10,6 +10,19 @@ main section{
     max-width: 992px;
 }
 
+.delivery-container__home{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    text-transform: uppercase;
+}
+
+.delivery-container__home img{
+    width: var(--fontSizeNormal);
+}
+
 .content-container{
     padding-top: 0;
     width: 100%;

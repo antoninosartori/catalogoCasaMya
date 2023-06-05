@@ -11,6 +11,7 @@ import fragance from '../assets/fragance.svg'
 import fragance2 from '../assets/fragance2.svg'
 import fragance3 from '../assets/fragance3.svg'
 import fragance4 from '../assets/fragance4.svg'
+import car from '../assets/car.svg'
 import GridCards from '../components/GridCards'
 
 
@@ -22,6 +23,8 @@ function HomePage() {
       < Header />
       
       <main>
+        
+
         < SearchBrand toOrderButton />
 
         <section className='content-container'>
@@ -33,6 +36,13 @@ function HomePage() {
 
           < GoUpArrow />
 
+        </section>
+
+        <section>
+          <div className='delivery-container__home'>
+            <img src={car} alt="" />
+            <p>envíos a domicilio</p>
+          </div>
         </section>
 
         <section className='separator'>
