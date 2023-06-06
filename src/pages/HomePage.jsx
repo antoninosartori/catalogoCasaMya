@@ -23,7 +23,12 @@ function HomePage() {
       < Header />
       
       <main>
-        
+        <section>
+          <div className='delivery-container__home'>
+            <img src={car} alt="" />
+            <p>envíos a domicilio</p>
+          </div>
+        </section>
 
         < SearchBrand toOrderButton />
 
@@ -36,13 +41,6 @@ function HomePage() {
 
           < GoUpArrow />
 
-        </section>
-
-        <section>
-          <div className='delivery-container__home'>
-            <img src={car} alt="" />
-            <p>envíos a domicilio</p>
-          </div>
         </section>
 
         <section className='separator'>
