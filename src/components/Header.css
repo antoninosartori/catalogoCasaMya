@@ -168,6 +168,8 @@ header nav h2{
     /* gap: 20px; */
 }
 
+
+
 .cart-cards .card-container .card-image{
     width: 80%;
 }
@@ -246,6 +248,10 @@ header nav h2{
     .cart-products{
         width: 90%;
         transform: translateX(-5%);
+    }
+    .cart-cards .card-container:hover {
+        box-shadow: none;
+        transition: .1s;
     }
 }
 

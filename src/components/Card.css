@@ -192,10 +192,6 @@
     .cart-image__inactive{
         display: block;
     }
-    .card-container:hover {
-        box-shadow: none;
-        transition: .1s;
-    }
 }
 
 @media screen and (max-width: 320px) {
