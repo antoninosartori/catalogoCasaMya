@@ -19,8 +19,7 @@ const Card = ({ id, marca, nombre, foto, capacidad, precio, estado, desc, precio
     const precioFormatted = Number(precio)
     const isOnCart = cart.some(product => product.id === id)
     const showCart = isOnCart ? cartFullImg : cartEmptyImg
-    
-
+    const cardStatusClassName = estado === 'agotado' || estado === 'encargalo' ? 'card-status card-status__unavailable' : 'card-status'
     
     const cardHover = () => {
         setWhatsappLinkClassName('cart-image')
@@ -51,8 +50,7 @@ const Card = ({ id, marca, nombre, foto, capacidad, precio, estado, desc, precio
         }
     }
 
-    const cardStatusClassName = estado === 'agotado' || estado === 'encargalo' ? 'card-status card-status__unavailable' : 'card-status'
-    
+    const cardAddOrRemoveFunction = isOnCart ? removeFromCart : addToCart
 
     return (
         <article onMouseOver={cardHover} onMouseOut={cardMouseOut} className='card-container' key={id}>
@@ -84,7 +82,7 @@ const Card = ({ id, marca, nombre, foto, capacidad, precio, estado, desc, precio
                 </a> */}
                 {!isInCart
                     ? <a className={whatsappLinkClassName} >
-                        <img onClick={addToCart} className='whatsapp-image' src={showCart} alt="Enviar mensaje de texto con ese mensaje" />
+                        <img onClick={cardAddOrRemoveFunction} className='whatsapp-image' src={showCart} alt="Agregar o quitar al carrito de compras" />
                     </a>
                     :
                     <img onClick={removeFromCart} className='cart-product__deleteImg' src={deleteImg} alt="Eliminar producto del carrito" />
