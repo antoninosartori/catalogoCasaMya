@@ -10,9 +10,10 @@ import cartFullImg from '../assets/cartBlack.svg'
 import deleteImg from '../assets/delete.svg'
 import { appContext } from '../context/appContext'
 
-const Card = ({ id, marca, nombre, foto, capacidad, precio, estado, desc, precioSinDesc, isInCart, genero }) => {
+const Card = ({ id, marca, nombre, foto, fotoFrasco, capacidad, precio, estado, desc, precioSinDesc, isInCart, genero }) => {
     const { cart, setCart, setOpenCart } = useContext(appContext)
     const [ whatsappLinkClassName, setWhatsappLinkClassName] = useState('cart-image cart-image__inactive')
+    const [ cardPicture, setCardPicture] = useState(foto)
     const [ isImageLoaded, setIsImageLoaded] = useState(false)
     const classNameImage = isImageLoaded ? 'card-image' : 'inactive'
    // const defaultMessage = 'Hola, estoy interesado en el producto'
@@ -23,10 +24,14 @@ const Card = ({ id, marca, nombre, foto, capacidad, precio, estado, desc, precio
     
     const cardHover = () => {
         setWhatsappLinkClassName('cart-image')
+        if(fotoFrasco){
+            setCardPicture(fotoFrasco)
+        }
     }
 
     const cardMouseOut = () => {
         setWhatsappLinkClassName('cart-image cart-image__inactive')
+        setCardPicture(foto)
     }
 
     const addToCart = () => {
@@ -63,7 +68,7 @@ const Card = ({ id, marca, nombre, foto, capacidad, precio, estado, desc, precio
                 
                 {!isImageLoaded &&  < ImagePlaceholder /> }
                    
-                <img onLoad={() => {setIsImageLoaded(true)}} className={classNameImage} src={foto} alt={`Imagen del producto ${marca} - ${nombre}`}/>
+                <img onLoad={() => {setIsImageLoaded(true)}} className={classNameImage} src={cardPicture} alt={`Imagen del producto ${marca} - ${nombre}`}/>
                 {/* <span className='card-capacity'>{`${capacidad}ml`}</span> */}
             </div>
             <div className='card-body'>

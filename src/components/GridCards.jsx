@@ -25,7 +25,7 @@ const GridCards = ({ cardsToMap }) => {
         }
         {cardsToMap &&
           cardsToMap?.map(fragance => (
-            < Card key={fragance.id} id={fragance.id} marca={fragance.marca} nombre={fragance.nombre} foto={fragance.foto} capacidad={fragance.capacidad} precio={fragance.precio} estado={fragance.estado} precioSinDesc={fragance.precioSinDesc} desc={fragance.desc} genero={fragance.genero} />
+            < Card key={fragance.id} id={fragance.id} marca={fragance.marca} nombre={fragance.nombre} foto={fragance.foto} fotoFrasco={fragance.fotoFrasco} capacidad={fragance.capacidad} precio={fragance.precio} estado={fragance.estado} precioSinDesc={fragance.precioSinDesc} desc={fragance.desc} genero={fragance.genero} />
           ))
         }
       </div>
