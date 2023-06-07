@@ -176,6 +176,11 @@ header nav h2{
     display: none;
 }
 
+.cart-cards .card-container .card-discount__porcent{
+    display: none;
+}
+
+
 .cart-cards .card-footer{
     justify-content: space-between;
 }

@@ -54,6 +54,11 @@ const Card = ({ id, marca, nombre, foto, capacidad, precio, estado, desc, precio
 
     return (
         <article onMouseOver={cardHover} onMouseOut={cardMouseOut} className='card-container' key={id}>
+            { desc &&
+                <div className='card-discount__porcent'>
+                    <span>-{desc}%</span>
+                </div>
+            }
             <div className='card-photo'>
                 
                 {!isImageLoaded &&  < ImagePlaceholder /> }
@@ -70,9 +75,9 @@ const Card = ({ id, marca, nombre, foto, capacidad, precio, estado, desc, precio
                 <h4 className='card-productName'>{nombre}</h4>
             </div>
             <div className='card-footer'>
-                {desc &&
+                {precioSinDesc &&
                     <div className='card-discount'>
-                        <span className='card-discount__off'>{`%${desc}`}</span>
+                        {/* <span className='card-discount__off'>{`%${desc}`}</span> */}
                         <h6 className='card-discount__price'>{`$${precioSinDesc}`}</h6>
                     </div>
                 }

@@ -36,6 +36,9 @@
 .checkout-cart .card-footer .card-discount{
     display: none;
 }
+.checkout-cart .card-discount__porcent{
+    display: none;
+}
 
 .checkout-cart .card-footer .card-price{
     font-size: var(--fontSizeChica);

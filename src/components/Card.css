@@ -87,6 +87,27 @@
     align-items: center;
 }
 
+.card-discount__porcent{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--colorSecundario);
+    z-index: 50;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    
+}
+
+.card-discount__porcent span{
+    font-size: var(--fontSizeNormal);
+    color: var(--colorPrincipal);
+}
+
 .card-discount{
     display: flex;
     align-items: center;
