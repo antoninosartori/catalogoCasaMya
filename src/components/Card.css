@@ -190,7 +190,8 @@
 
 @media screen and (max-width: 768px) {
     .cart-image__inactive{
-        display: block;
+        display: inline-flex;
+        
     }
 }
 

@@ -74,6 +74,7 @@ header nav h2{
     /* padding: 6px 7px 3px 7px; */
     height: 26px;
     width: 26px;
+    color: var(--colorSecundario);
     border: 1px solid var(--colorSecundario);
     border-radius: 50%;
     background-color: var(--colorPrincipal);
@@ -227,6 +228,7 @@ header nav h2{
     border: none;
     font-family: var(--fontPrincipal);
     text-transform: uppercase;
+    color: var(--colorSecundario);
 }
 
 .cart-products .cart-cards .closeButton:hover{
