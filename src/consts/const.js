@@ -8,6 +8,10 @@ export const brandsImages = [
     imagePath: 'https://drive.google.com/uc?export=view&id=1Qa4xvcTC23UMxDhpEeO6EhFFLWMA2jpA&rl'
   },
   {
+    name: 'Givenchy',
+    imagePath: 'https://drive.google.com/uc?export=view&id=1e7uP3vwGKfLptoL1-6VHxfZ6-bQzvmCr&rl'
+  },
+  {
     name: 'Antonio Banderas',
     imagePath: 'https://sarantisgroup.com/media/4e3daqne/ab-logo.png'
   },
@@ -27,13 +31,14 @@ export const brandsImages = [
     name: 'Agatha Ruiz',
     imagePath: 'https://drive.google.com/uc?export=view&id=1FRvqFJq4gmMfPpSPg-YF73i86Yl6DjrD&rl'
   },
-  {
+  /* {
     name: 'Kevin',
     imagePath: 'https://cdn.batitienda.com/baticloud/images/brand_ce813ec668d64eb49efb95306d6b8b2a_637437997968733165_0_m.webp'
-  },
+  }, */
   /* {
     name: 'Soul Essences',
     imagePath: 'https://drive.google.com/uc?export=view&id=1odCQ3XjTyFttz2aCK_PlkaapXR9ipNTc&rl'
+    
   },
  */
 ]
