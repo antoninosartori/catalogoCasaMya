@@ -30,7 +30,7 @@ function HomePage() {
           </div>
         </section>
 
-        < SearchBrand toOrderButton />
+        < SearchBrand />
 
         <section className='content-container'>
           {error && <h2>Lo siento, ha ocurrido un error, intente nuevamente</h2>}
